@@ -1,0 +1,5 @@
+require('lemongrass.settings')
+require("lemongrass.remap")
+require("lemongrass.plugins")
+require("lemongrass.colorscheme")
+-- require('lemongrass.nvim-cmp')
