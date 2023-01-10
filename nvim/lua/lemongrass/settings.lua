@@ -39,3 +39,6 @@ vim.opt.cursorline = true
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
+
+-- from devaslife
+vim.opt.cmdheight = 1
