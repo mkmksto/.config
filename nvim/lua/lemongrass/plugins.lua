@@ -63,6 +63,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	--scrollbar
+	use("dstein64/nvim-scrollview")
+
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 

@@ -17,9 +17,11 @@ keymap.set("n", "<Down>", "")
 keymap.set("n", "<Left>", "")
 keymap.set("n", "<Right>", "")
 
+-- Buffers
 -- navigate buffers (tab and shift tab to navigate bufferline buffers)
 keymap.set("n", "<Tab>", ":bnext<CR>")
 keymap.set("n", "<S-Tab>", ":bprevious<CR>")
+keymap.set("n", "<leader>bd", ":Bdelete!<CR>")
 
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
