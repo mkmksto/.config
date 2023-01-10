@@ -18,6 +18,7 @@ end
 
 mason.setup()
 
+-- language servers
 mason_lspconfig.setup({
 	ensure_installed = {
 		"tsserver",
@@ -34,6 +35,7 @@ mason_lspconfig.setup({
 	},
 })
 
+-- linters and formatters
 -- https://github.com/jay-babu/mason-null-ls.nvim
 -- these are to be added to mason.lua
 mason_null_ls.setup({
@@ -41,7 +43,7 @@ mason_null_ls.setup({
 		"prettier",
 		"stylua",
 		"eslint_d",
-		-- 'black',
-		-- 'pylint',
+		"black",
+		"pylint",
 	},
 })
