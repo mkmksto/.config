@@ -13,7 +13,11 @@ bufferline.setup({
 		-- NOTE: this plugin is designed with this icon in mind,
 		-- and so changing this is NOT recommended, this is intended
 		-- as an escape hatch for people who cannot bear it for whatever reason
-		indicator_icon = "▎",
+		indicator = {
+			icon = "▎",
+			style = "icon",
+		},
+		-- indicator_icon =
 		buffer_close_icon = "",
 		-- buffer_close_icon = '',
 		modified_icon = "●",
@@ -81,11 +85,11 @@ bufferline.setup({
 			bg = { attribute = "bg", highlight = "TabLine" },
 		},
 
-		-- buffer_selected = {
-		--   fg = {attribute='fg',highlight='#ff0000'},
-		--   bg = {attribute='bg',highlight='#0000ff'},
-		--   gui = 'none'
-		--   },
+		buffer_selected = {
+			fg = "#ffffff",
+			bg = "#580651",
+			bold = true,
+		},
 		buffer_visible = {
 			fg = { attribute = "fg", highlight = "TabLine" },
 			bg = { attribute = "bg", highlight = "TabLine" },
