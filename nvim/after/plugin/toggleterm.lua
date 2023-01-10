@@ -9,6 +9,8 @@ toggleterm.setup({
 	open_mapping = [[<c-\>]],
 	hide_numbers = true, -- hide the number column in toggleterm buffers
 	persist_mode = true,
+	persist_size = true,
+	direction = "horizontal",
 })
 
 function _G.set_terminal_keymaps()
