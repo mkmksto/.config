@@ -23,7 +23,7 @@ vim.opt.autoindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 6
 vim.opt.ttyfast = true
 
 -- https://youtu.be/hY5-Q6NxQgY?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=296
