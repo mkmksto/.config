@@ -16,6 +16,8 @@ if not typescript_setup then
     return
 end
 
+
+-- :LspInfo to see what lsp is run on current file
 local keymap = vim.keymap
 local on_attach = function(client, bufnr)
     -- keybind options
