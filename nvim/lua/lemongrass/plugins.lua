@@ -18,6 +18,10 @@ return require("packer").startup(function(use)
 
 	use("nvim-lualine/lualine.nvim")
 
+	-- c@m https://youtu.be/vJAmjAax2H0?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=453
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	use("moll/vim-bbye")
+
 	-- aucomplete
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer") -- recommend text from current buffer

@@ -17,6 +17,10 @@ keymap.set("n", "<Down>", "")
 keymap.set("n", "<Left>", "")
 keymap.set("n", "<Right>", "")
 
+-- navigate buffers
+keymap.set("n", "<Tab>", ":bnext<CR>")
+keymap.set("n", "<S-Tab>", ":bprevious<CR>")
+
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
@@ -30,10 +34,10 @@ keymap.set("n", "<C-down>", "<C-w>-")
 -- https://youtu.be/vdn_pKJUda8?list=PLTqGJvc0HUn2GY0sW2L61lDuBaXBKnorO&t=1064
 keymap.set("n", "x", '"_x') -- do not copy a deleted char to register
 -- managing tabs
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close tab (kinda unnecessary since I use <C-w>q anyway but whatever
-keymap.set("n", "<Tab>", ":tabn<CR>") -- next tab
-keymap.set("n", "<S-Tab>", ":tabp<CR>") -- previous tab
+-- keymap.set("n", "<leader>to", ":tabnew<CR>") -- new tab
+-- keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close tab (kinda unnecessary since I use <C-w>q anyway but whatever
+-- keymap.set("n", "<Tab>", ":tabn<CR>") -- next tab
+-- keymap.set("n", "<S-Tab>", ":tabp<CR>") -- previous tab
 
 -- nvim tree toglee
 keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
