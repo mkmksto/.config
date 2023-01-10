@@ -17,7 +17,7 @@ keymap.set("n", "<Down>", "")
 keymap.set("n", "<Left>", "")
 keymap.set("n", "<Right>", "")
 
--- navigate buffers
+-- navigate buffers (tab and shift tab to navigate bufferline buffers)
 keymap.set("n", "<Tab>", ":bnext<CR>")
 keymap.set("n", "<S-Tab>", ":bprevious<CR>")
 
