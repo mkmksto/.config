@@ -18,6 +18,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"ray-x/starry.nvim",
+		setup = function()
+			-- see example setup below
+			vim.g.starry_italic_comments = true
+		end,
+	})
+
 	use("numToStr/Comment.nvim")
 
 	use("nvim-tree/nvim-tree.lua")
