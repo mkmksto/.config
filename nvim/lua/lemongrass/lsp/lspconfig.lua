@@ -52,16 +52,22 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- configure html server
 lspconfig.html.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- configure css server
 lspconfig.cssls.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
+
+-- lspconfig.cssmodules_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+-- })
 
 -- python
 lspconfig["pyright"].setup({
@@ -81,9 +87,9 @@ lspconfig["jsonls"].setup({
 
 -- configure tailwindcss server
 lspconfig.tailwindcss.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 lspconfig.tsserver.setup({})
@@ -98,15 +104,15 @@ lspconfig.tsserver.setup({})
 -- })
 
 lspconfig.volar.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure lua server (with special settings)
