@@ -52,8 +52,15 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- configure html server
 lspconfig.html.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+})
+
+-- configure css server
+lspconfig.cssls.setup({
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- python
@@ -72,39 +79,34 @@ lspconfig["jsonls"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig.volar.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- note: this is a plugin
-typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
-		-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
-	},
-})
-
--- configure css server
-lspconfig.cssls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
-})
-
 -- configure tailwindcss server
 lspconfig.tailwindcss.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+})
+
+lspconfig.tsserver.setup({})
+
+-- note: this is a plugin
+-- typescript.setup({
+-- 	server = {
+-- 		capabilities = capabilities,
+-- 		on_attach = on_attach,
+-- 		-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+-- 	},
+-- })
+
+lspconfig.volar.setup({
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
 })
 
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure lua server (with special settings)
