@@ -13,7 +13,8 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 -- fuzzy finding (git file search)
 vim.keymap.set("n", "<leader>pf", builtin.git_files, {})
--- not sure what this does, does this grep inside files??
+
+-- something similar @ remap.lua (except that one only searches inside files, this one includes the file names)
 vim.keymap.set("n", "<leader>ps", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
