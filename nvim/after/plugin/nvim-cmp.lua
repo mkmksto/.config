@@ -56,9 +56,10 @@ cmp.setup({
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp", max_item_count = 8 }, -- lsp as source for autocompletion
+		-- { name = "nvim_lsp", max_item_count = 8, keyword_length = 6 }, -- lsp as source for autocompletion
 		{ name = "luasnip", max_item_count = 8 }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
-		{ name = "path" }, -- file system paths
+		{ name = "path", max_item_count = 8 }, -- file system paths
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
