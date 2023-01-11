@@ -27,6 +27,7 @@ cmp.setup({
 	completion = {
 		completeopt = "menu,menuone,noinsert",
 	},
+	-- https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
 	enabled = function()
 		-- disable completion in comments
 		local context = require("cmp.config.context")
