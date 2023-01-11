@@ -10,13 +10,13 @@ return require("packer").startup(function(use)
 
 	-- use("bluz71/vim-nightfly-guicolors")
 
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	})
+	-- use({
+	-- 	"rose-pine/neovim",
+	-- 	as = "rose-pine",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme rose-pine")
+	-- 	end,
+	-- })
 
 	use({
 		"ray-x/starry.nvim",
@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- bridges mason and nvim-lspconfig
 
 	-- LSP servers config
-	use("neovim/nvim-lspconfig")
+	use("neovim/nvim-lspconfig") -- for configuring LSP servers
 	use("hrsh7th/cmp-nvim-lsp") -- so that the lsp appears in autocompletion
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim")

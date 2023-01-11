@@ -5,6 +5,7 @@ if not mason_status then
 end
 
 -- import mason-lspconfig plugin safely
+-- mason-lspconfig is the bridge between mason and neovim/lsp-config
 local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status then
 	return
@@ -19,6 +20,7 @@ end
 mason.setup()
 
 -- language servers
+-- https://github.com/williamboman/mason-lspconfig.nvim
 mason_lspconfig.setup({
 	ensure_installed = {
 		"tsserver",
