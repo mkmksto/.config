@@ -21,11 +21,23 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
+-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 cmp.setup({
 	-- https://github.com/hrsh7th/nvim-cmp/issues/209
 	completion = {
 		completeopt = "menu,menuone,noinsert",
 	},
+	enabled = function()
+		-- disable completion in comments
+		local context = require("cmp.config.context")
+		-- keep command mode completion enabled when cursor is in a comment
+		if vim.api.nvim_get_mode().mode == "c" then
+			return true
+		else
+			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+		end
+	end,
+
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
@@ -42,8 +54,8 @@ cmp.setup({
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- lsp as source for autocompletion
-		{ name = "luasnip" }, -- snippets
+		{ name = "nvim_lsp", max_item_count = 8 }, -- lsp as source for autocompletion
+		{ name = "luasnip", max_item_count = 8 }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
 	}),
