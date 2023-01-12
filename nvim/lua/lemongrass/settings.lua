@@ -12,8 +12,10 @@ vim.opt.smartcase = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.linebreak = true
--- vim.opt.wrap = true
 -- vim.opt.wrapmargin = 20
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
 
 -- indentation
 vim.opt.tabstop = 4
@@ -21,6 +23,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+-- vim.opt.viewoptions = "folds,cursor"
+vim.opt.title = true
 
 -- when searching do not keep things highlighted, enable incremental search
 vim.opt.hlsearch = false

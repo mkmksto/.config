@@ -8,15 +8,30 @@ return require("packer").startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	-- use("bluz71/vim-nightfly-guicolors")
+	use("bluz71/vim-nightfly-guicolors")
 
-	-- use({
-	-- 	"rose-pine/neovim",
-	-- 	as = "rose-pine",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 	end,
-	-- })
+	use("mhartington/oceanic-next")
+
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	})
+
+	use("lmburns/kimbox")
+	use({
+		"NvChad/ui",
+
+		config = function()
+			local present, nvchad_ui = pcall(require, "nvchad_ui")
+
+			if present then
+				nvchad_ui.setup()
+			end
+		end,
+	})
 
 	use({
 		"ray-x/starry.nvim",
