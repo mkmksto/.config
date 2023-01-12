@@ -4,8 +4,8 @@ if not lspconfig_status then
 	return
 end
 
-local lspconfig_configs = require("lspconfig.configs")
-local lspconfig_util = require("lspconfig.util")
+-- local lspconfig_configs = require("lspconfig.configs")
+-- local lspconfig_util = require("lspconfig.util")
 
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

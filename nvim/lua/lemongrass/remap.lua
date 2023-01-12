@@ -1,9 +1,10 @@
 local keymap = vim.keymap
 vim.g.mapleader = " "
 
--- scroll up down
+-- maintain centered lines
 keymap.set("n", "<C-j>", "<C-d>zz")
 keymap.set("n", "<C-k>", "<C-u>zz")
+-- keymap.set("n", "''", "''zz")
 
 -- my remaps
 -- keymap.set("i", "<S-space", "<Esc>")

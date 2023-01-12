@@ -42,7 +42,8 @@ mason_lspconfig.setup({
 -- these are to be added to mason.lua
 mason_null_ls.setup({
 	ensure_installed = {
-		"prettier",
+		-- "prettier",
+		"prettierd",
 		"stylua",
 		"eslint_d",
 		"black",

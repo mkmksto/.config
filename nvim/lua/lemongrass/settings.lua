@@ -11,6 +11,9 @@ vim.opt.smartcase = true
 -- line numbers + relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.linebreak = true
+-- vim.opt.wrap = true
+-- vim.opt.wrapmargin = 20
 
 -- indentation
 vim.opt.tabstop = 4
