@@ -11,6 +11,7 @@ keymap.set("n", "<C-k>", "<C-u>zz")
 keymap.set("i", "<C-j>", "<Esc>o")
 keymap.set("n", "<C-Enter>", "o<Esc>")
 keymap.set({ "i", "n", "v" }, "<C-z>", "")
+keymap.set("n", " ", "")
 
 keymap.set("n", "<S-j>", "")
 keymap.set("n", "<Up>", "")
