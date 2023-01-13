@@ -12,9 +12,9 @@ local is_linux = has("unix")
 local is_win = has("win32")
 
 if is_linux then
-	require("lemongrass.linux")
+    require("lemongrass.linux")
 end
 
 if is_win then
-	require("lemongrass.windows")
+    require("lemongrass.windows")
 end
