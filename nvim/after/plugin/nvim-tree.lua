@@ -1,4 +1,4 @@
-local setup, nvimtree = pcall(require, 'nvim-tree')
+local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
     return
 end
@@ -14,8 +14,8 @@ nvimtree.setup({
     actions = {
         open_file = {
             window_picker = {
-                enable = false
-            }
-        }
-    }
+                enable = false,
+            },
+        },
+    },
 })
