@@ -29,6 +29,7 @@ end
 -- https://stackoverflow.com/questions/13511084/vim-set-cursor-position-in-command-line
 vim.keymap.set("n", "<leader>`", ":ToggleTerm direction=horizontal<C-Left><Left>")
 vim.keymap.set("n", "<C-`>", ":ToggleTermToggleAll<CR>")
+vim.keymap.set("n", "<leader>lz", ":LazyGit<CR>")
 -- vim.keymap.set("n", "<ledaer>h", "<C-w>h")
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
@@ -52,6 +53,12 @@ function _HTOP_TOGGLE()
     htop:toggle()
 end
 vim.keymap.set("n", "<leader>htop", ":lua _HTOP_TOGGLE()<CR>")
+
+-- local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+-- function _LAZYGIT_TOGGLE()
+--     lazygit:toggle()
+-- end
+-- vim.keymap.set("n", "<leader>lz", ":lua _LAZYGIT_TOGGLE()<CR>")
 
 -- vim.keymap.set("n", "<C-\\>", ":ToggleTerm direction=float")
 -- vim.keymap.set("n", "<C-\\>", ":ToggleTerm direction=horizontal")
