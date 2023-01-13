@@ -3,7 +3,7 @@ if not refactoring_setup then
 	return
 end
 
-require("refactoring").setup({})
+refactoring.setup({})
 
 -- Remaps for the refactoring operations currently offered by the plugin
 vim.api.nvim_set_keymap(
@@ -12,18 +12,21 @@ vim.api.nvim_set_keymap(
 	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
 	{ noremap = true, silent = true, expr = false }
 )
+
 vim.api.nvim_set_keymap(
 	"v",
 	"<leader>rf",
 	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
 	{ noremap = true, silent = true, expr = false }
 )
+
 vim.api.nvim_set_keymap(
 	"v",
 	"<leader>rv",
 	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
 	{ noremap = true, silent = true, expr = false }
 )
+
 vim.api.nvim_set_keymap(
 	"v",
 	"<leader>ri",
@@ -38,6 +41,7 @@ vim.api.nvim_set_keymap(
 	[[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
 	{ noremap = true, silent = true, expr = false }
 )
+
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>rbf",
