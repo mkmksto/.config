@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-scrollview",
     url = "https://github.com/dstein64/nvim-scrollview"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -251,12 +256,6 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
-  ui = {
-    config = { "\27LJ\2\nI\0\0\4\0\4\0\t6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\2€9\2\3\1B\2\1\1K\0\1\0\nsetup\14nvchad_ui\frequire\npcall\0" },
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/ui",
-    url = "https://github.com/NvChad/ui"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -266,6 +265,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 
@@ -277,10 +281,6 @@ time([[Setup for starry.nvim]], false)
 time([[packadd for starry.nvim]], true)
 vim.cmd [[packadd starry.nvim]]
 time([[packadd for starry.nvim]], false)
--- Config for: ui
-time([[Config for ui]], true)
-try_loadstring("\27LJ\2\nI\0\0\4\0\4\0\t6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\2€9\2\3\1B\2\1\1K\0\1\0\nsetup\14nvchad_ui\frequire\npcall\0", "config", "ui")
-time([[Config for ui]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")

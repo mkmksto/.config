@@ -48,10 +48,11 @@ return require("packer").startup(function(use)
 
 	use("numToStr/Comment.nvim")
 
+	-- surrounds
+	use("tpope/vim-surround")
+
 	use("nvim-tree/nvim-tree.lua")
-
 	use("kyazdani42/nvim-web-devicons")
-
 	use("nvim-lualine/lualine.nvim")
 
 	-- c@m https://youtu.be/vJAmjAax2H0?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=453

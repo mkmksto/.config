@@ -60,3 +60,7 @@ local opts = { noremap = true, silent = true }
 -- Move text up and down
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+
+-- pasting stuff (from prime's vid) (https://youtu.be/w7i4amO_zaE?t=1610)
+keymap.set("x", "<leader>p", '"_dP')
+keymap.set("n", "Q", "<nop>")
