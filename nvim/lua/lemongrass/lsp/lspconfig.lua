@@ -4,9 +4,6 @@ if not lspconfig_status then
 	return
 end
 
--- local lspconfig_configs = require("lspconfig.configs")
--- local lspconfig_util = require("lspconfig.util")
-
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
@@ -63,12 +60,6 @@ lspconfig.cssls.setup({
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
-
--- lspconfig.cssmodules_ls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
--- })
 
 -- python
 lspconfig["pyright"].setup({

@@ -12,12 +12,14 @@ return require("packer").startup(function(use)
 
 	use("mhartington/oceanic-next")
 
+	use("nyoom-engineering/oxocarbon.nvim")
+
 	use({
 		"rose-pine/neovim",
 		as = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
+		-- config = function()
+		-- 	vim.cmd("colorscheme rose-pine")
+		-- end,
 	})
 
 	use("lmburns/kimbox")
@@ -40,6 +42,9 @@ return require("packer").startup(function(use)
 			vim.g.starry_italic_comments = true
 		end,
 	})
+
+	-- refactoring
+	use("ThePrimeagen/refactoring.nvim")
 
 	use("numToStr/Comment.nvim")
 
