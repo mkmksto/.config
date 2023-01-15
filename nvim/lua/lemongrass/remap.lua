@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 -- maintain centered lines
 keymap.set("n", "<C-j>", "<C-d>zz")
 keymap.set("n", "<C-k>", "<C-u>zz")
+keymap.set("n", "{", "{zz")
+keymap.set("n", "}", "}zz")
 -- keymap.set("n", "''", "''zz")
 
 -- my remaps
@@ -13,7 +15,7 @@ keymap.set("n", "<C-Enter>", "o<Esc>")
 keymap.set({ "i", "n", "v" }, "<C-z>", "")
 keymap.set("n", " ", "")
 
-keymap.set("n", "<S-j>", "")
+keymap.set({ "n", "v" }, "<S-j>", "")
 keymap.set("n", "<Up>", "")
 keymap.set("n", "<Down>", "")
 keymap.set("n", "<Left>", "")
@@ -30,10 +32,10 @@ keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 -- Resize window
-keymap.set("n", "<C-left>", "<C-w><")
-keymap.set("n", "<C-right>", "<C-w>>")
-keymap.set("n", "<C-up>", "<C-w>+")
-keymap.set("n", "<C-down>", "<C-w>-")
+keymap.set("n", "<C-left>", "<C-w>10<")
+keymap.set("n", "<C-right>", "<C-w>10>")
+keymap.set("n", "<C-up>", "<C-w>6+")
+keymap.set("n", "<C-down>", "<C-w>6-")
 
 -- https://youtu.be/vdn_pKJUda8?list=PLTqGJvc0HUn2GY0sW2L61lDuBaXBKnorO&t=1064
 keymap.set("n", "x", '"_x') -- do not copy a deleted char to register

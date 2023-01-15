@@ -26,7 +26,7 @@ mason_lspconfig.setup({
         "tsserver",
         "html",
         "cssls",
-        -- "tailwindcss",
+        "tailwindcss",
         "sumneko_lua",
         "emmet_ls",
         "bashls",

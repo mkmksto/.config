@@ -78,12 +78,12 @@ lspconfig["jsonls"].setup({
 })
 
 -- configure tailwindcss server
---https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
--- lspconfig.tailwindcss.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	-- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
--- })
+-- https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
+lspconfig.tailwindcss.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+})
 
 -- lspconfig.tsserver.setup({})
 
