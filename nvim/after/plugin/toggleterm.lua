@@ -40,7 +40,7 @@ local python = Terminal:new({ cmd = "python3", hidden = true, direction = "float
 function _PYTHON_TOGGLE()
     python:toggle()
 end
-vim.keymap.set("n", "<leader>py", ":lua _PYTHON_TOGGLE()<CR>")
+vim.keymap.set("n", "<leader>tpy", ":lua _PYTHON_TOGGLE()<CR>")
 
 local floating_term = Terminal:new({ hidden = true, direction = "float" })
 function _FLOATING_TOGGLE()

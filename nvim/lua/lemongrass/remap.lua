@@ -76,3 +76,4 @@ keymap.set({ "n", "o" }, "<C-/>", "<cmd>CommentToggle<CR>", opts)
 
 -- docstrings
 keymap.set({ "n" }, "<leader>dpy", "<cmd>DogeGenerate google<CR>", opts)
+keymap.set({ "n" }, "<leader>djs", "<cmd>DogeGenerate jsdoc<CR>", opts)
