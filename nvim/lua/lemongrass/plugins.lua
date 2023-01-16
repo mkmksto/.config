@@ -49,6 +49,17 @@ return require("packer").startup(function(use)
     -- use("numToStr/Comment.nvim")
     use("terrortylor/nvim-comment")
 
+    -- docstrings
+    use({
+        "kkoomen/vim-doge",
+        run = ":call doge#install()",
+        config = function()
+            require("config.doge").setup()
+        end,
+        cmd = { "DogeGenerate", "DogeCreateDocStandard" },
+        disable = false,
+    })
+
     -- surrounds
     use("tpope/vim-surround")
 

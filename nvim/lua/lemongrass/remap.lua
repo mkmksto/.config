@@ -73,3 +73,6 @@ keymap.set("n", "Q", "<nop>")
 -- keymap.set({ "v", "x", "c", "o" }, "?", "gc")
 -- keymap.set({ "n", "o" }, "<C-/>", "gcc")
 keymap.set({ "n", "o" }, "<C-/>", "<cmd>CommentToggle<CR>", opts)
+
+-- docstrings
+keymap.set({ "n" }, "<leader>dpy", "<cmd>DogeGenerate google<CR>", opts)
