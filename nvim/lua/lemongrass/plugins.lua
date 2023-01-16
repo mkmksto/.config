@@ -100,7 +100,7 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
 
-    -- git
+    -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
     use("lewis6991/gitsigns.nvim")
     -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
     use("kdheepak/lazygit.nvim")
