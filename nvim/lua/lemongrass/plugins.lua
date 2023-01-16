@@ -46,7 +46,8 @@ return require("packer").startup(function(use)
     -- refactoring
     use("ThePrimeagen/refactoring.nvim")
 
-    use("numToStr/Comment.nvim")
+    -- use("numToStr/Comment.nvim")
+    use("terrortylor/nvim-comment")
 
     -- surrounds
     use("tpope/vim-surround")

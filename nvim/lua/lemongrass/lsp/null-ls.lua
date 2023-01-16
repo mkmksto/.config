@@ -13,6 +13,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- https://youtu.be/b7OguLuaYvE?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=632
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 -- :NullLsInfo in you particular language file to check what it's using and what's available
 null_ls.setup({
     sources = {
