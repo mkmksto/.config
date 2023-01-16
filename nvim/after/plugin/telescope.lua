@@ -4,7 +4,7 @@ if not telescope_setup then
 end
 
 local actions_setup, actions = pcall(require, "telescope.actions")
-if not telescope_setup then
+if not actions_setup then
     return
 end
 

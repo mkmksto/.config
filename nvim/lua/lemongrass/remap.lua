@@ -55,13 +55,15 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Move text up and down (https://www.chiarulli.me/Neovim-2/02-keymaps/)
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 -- keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 
--- Move text up and down
+-- Move text up and down (https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/keymappings.lua)
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+keymap.set("n", "<A-j>", ":m .+1<CR>==")
+keymap.set("n", "<A-k>", ":m .-2<CR>==")
 
 -- pasting stuff (from prime's vid) (https://youtu.be/w7i4amO_zaE?t=1610)
 keymap.set("x", "<leader>p", '"_dP')
