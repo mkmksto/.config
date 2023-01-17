@@ -25,6 +25,8 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 -- vim.opt.viewoptions = "folds,cursor"
 vim.opt.title = true
+-- https://github.com/F-Robot/dotfiles/blob/master/.config/nvim/lua/settings.lua
+vim.opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
 
 -- when searching do not keep things highlighted, enable incremental search
 vim.opt.hlsearch = false

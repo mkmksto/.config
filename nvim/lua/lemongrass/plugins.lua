@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
     -- docstrings
     use({
         "kkoomen/vim-doge",
-        run = ":call doge#install()",
+        -- run = ":call doge#install()",
         config = function()
             require("config.doge").setup()
         end,
@@ -122,4 +122,19 @@ return require("packer").startup(function(use)
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+
+    -- -- assistants and AI
+    -- use({
+    --     "jackMort/ChatGPT.nvim",
+    --     config = function()
+    --         require("chatgpt").setup({
+    --             -- optional configuration
+    --         })
+    --     end,
+    --     requires = {
+    --         "MunifTanjim/nui.nvim",
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-telescope/telescope.nvim",
+    --     },
+    -- })
 end)

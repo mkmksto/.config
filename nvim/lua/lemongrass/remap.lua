@@ -72,7 +72,7 @@ keymap.set("n", "Q", "<nop>")
 -- visual line comments
 -- keymap.set({ "v", "x", "c", "o" }, "?", "gc")
 -- keymap.set({ "n", "o" }, "<C-/>", "gcc")
-keymap.set({ "n", "o" }, "<C-/>", "<cmd>CommentToggle<CR>", opts)
+keymap.set({ "n", "o" }, "<C-/>", "<cmd>CommentToggle<CR>", { silent = true })
 
 -- docstrings
 keymap.set({ "n" }, "<leader>dpy", "<cmd>DogeGenerate google<CR>", opts)
