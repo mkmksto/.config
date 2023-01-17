@@ -54,3 +54,6 @@ vim.opt.cmdheight = 1
 
 -- for comment remaps
 vim.opt.timeoutlen = 1000
+
+-- https://www.reddit.com/r/neovim/comments/rb3ac1/how_can_i_remove_the_symbol/
+vim.opt.fillchars:append({ eob = " " })
