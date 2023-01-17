@@ -45,6 +45,7 @@ return require("packer").startup(function(use)
 
     -- refactoring
     use("ThePrimeagen/refactoring.nvim")
+    use("windwp/nvim-spectre")
 
     -- use("numToStr/Comment.nvim")
     use("terrortylor/nvim-comment")
