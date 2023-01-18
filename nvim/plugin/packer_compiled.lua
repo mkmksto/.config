@@ -234,11 +234,6 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
     url = "https://github.com/ThePrimeagen/refactoring.nvim"
   },
-  ["rose-pine"] = {
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["starry.nvim"] = {
     loaded = true,
     needs_bufread = false,
@@ -273,7 +268,6 @@ _G.packer_plugins = {
   },
   ["vim-doge"] = {
     commands = { "DogeGenerate", "DogeCreateDocStandard" },
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16config.doge\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -323,6 +317,13 @@ pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdarg
       end})
 time([[Defining lazy-load commands]], false)
 
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -14,13 +14,13 @@ return require("packer").startup(function(use)
 
     use("nyoom-engineering/oxocarbon.nvim")
 
-    use({
-        "rose-pine/neovim",
-        as = "rose-pine",
-        -- config = function()
-        -- 	vim.cmd("colorscheme rose-pine")
-        -- end,
-    })
+    -- use({
+    --     "rose-pine/neovim",
+    --     as = "rose-pine",
+    --     -- config = function()
+    --     -- 	vim.cmd("colorscheme rose-pine")
+    --     -- end,
+    -- })
 
     use("lmburns/kimbox")
     -- use({
@@ -53,12 +53,13 @@ return require("packer").startup(function(use)
     -- docstrings
     use({
         "kkoomen/vim-doge",
-        -- run = ":call doge#install()",
-        config = function()
-            require("config.doge").setup()
-        end,
+        run = ":call doge#install()",
+        -- config = function()
+        --     require("config.doge").setup()
+        -- end,
         cmd = { "DogeGenerate", "DogeCreateDocStandard" },
         disable = false,
+        event = "VimEnter",
     })
 
     -- surrounds

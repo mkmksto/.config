@@ -1,3 +1,9 @@
+local doge_setup, config_doge = pcall(require, "config.doge")
+if not doge_setup then
+    return
+end
+
+config_doge.setup({})
 -- local M = {}
 --
 -- function M.setup()
