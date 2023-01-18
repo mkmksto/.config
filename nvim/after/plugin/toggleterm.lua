@@ -8,7 +8,6 @@ toggleterm.setup({
     size = 20,
     open_mapping = [[<c-\>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers
-    persist_mode = true,
     persist_size = true,
     direction = "horizontal",
     start_in_insert = true,
