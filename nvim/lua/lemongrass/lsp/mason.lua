@@ -39,7 +39,7 @@ mason_lspconfig.setup({
 
 -- linters and formatters
 -- https://github.com/jay-babu/mason-null-ls.nvim
--- these are to be added to mason.lua
+-- these are to be added to mason.lua (more like null-ls.lua right?)
 mason_null_ls.setup({
     ensure_installed = {
         -- "prettier",
@@ -48,5 +48,6 @@ mason_null_ls.setup({
         "eslint_d",
         "black",
         "pylint",
+        "isort",
     },
 })
