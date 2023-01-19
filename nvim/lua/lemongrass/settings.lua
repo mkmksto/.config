@@ -57,3 +57,11 @@ vim.opt.timeoutlen = 1000
 
 -- https://www.reddit.com/r/neovim/comments/rb3ac1/how_can_i_remove_the_symbol/
 vim.opt.fillchars:append({ eob = " " })
+
+-- folding
+-- https://unix.stackexchange.com/questions/141097/how-to-enable-and-use-code-folding-in-vim
+-- vim.opt.foldmethod = "syntax"
+-- vim.opt.foldnestmax = 10
+-- vim.opt.foldnestmax = 10
+-- vim.opt.nofoldenable = true
+-- vim.opt.foldlevel = 2
