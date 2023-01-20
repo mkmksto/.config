@@ -40,10 +40,10 @@ keymap.set("n", "<C-down>", "<C-w>6-")
 -- https://youtu.be/vdn_pKJUda8?list=PLTqGJvc0HUn2GY0sW2L61lDuBaXBKnorO&t=1064
 keymap.set("n", "x", '"_x') -- do not copy a deleted char to register
 -- managing tabs
--- keymap.set("n", "<leader>to", ":tabnew<CR>") -- new tab
--- keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close tab (kinda unnecessary since I use <C-w>q anyway but whatever
--- keymap.set("n", "<Tab>", ":tabn<CR>") -- next tab
--- keymap.set("n", "<S-Tab>", ":tabp<CR>") -- previous tab
+keymap.set("n", "<leader>tn", ":tabnew<CR>") -- new tab
+keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close tab
+keymap.set("n", "<leader><Tab>", ":tabn<CR>") -- next tab
+keymap.set("n", "<leader><S-Tab>", ":tabp<CR>") -- previous tab
 
 -- nvim tree toglee
 keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
