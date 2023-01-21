@@ -32,7 +32,7 @@ vim.opt.breakindent = true -- Wrapped lines will be visually indented with same 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 6
+vim.opt.scrolloff = 12
 vim.opt.ttyfast = true
 
 -- https://youtu.be/hY5-Q6NxQgY?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=296
