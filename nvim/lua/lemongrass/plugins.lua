@@ -14,26 +14,7 @@ return require("packer").startup(function(use)
 
     use("nyoom-engineering/oxocarbon.nvim")
 
-    -- use({
-    --     "rose-pine/neovim",
-    --     as = "rose-pine",
-    --     -- config = function()
-    --     -- 	vim.cmd("colorscheme rose-pine")
-    --     -- end,
-    -- })
-
     use("lmburns/kimbox")
-    -- use({
-    -- 	"NvChad/ui",
-    --
-    -- 	config = function()
-    -- 		local present, nvchad_ui = pcall(require, "nvchad_ui")
-    --
-    -- 		if present then
-    -- 			nvchad_ui.setup()
-    -- 		end
-    -- 	end,
-    -- })
 
     use({
         "ray-x/starry.nvim",
