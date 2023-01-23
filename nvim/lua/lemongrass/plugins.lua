@@ -105,6 +105,13 @@ return require("packer").startup(function(use)
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
+    -- color pickers/colorizers
+    -- https://www.reddit.com/r/neovim/comments/xk75hb/cccnvim_added_colors_highlighting/
+    use({
+        "uga-rosa/ccc.nvim",
+        branch = "0.7.2",
+    })
+
     -- -- assistants and AI
     -- use({
     --     "jackMort/ChatGPT.nvim",
