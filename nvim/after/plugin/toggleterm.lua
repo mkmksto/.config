@@ -43,11 +43,12 @@ function _PYTHON_TOGGLE()
 end
 vim.keymap.set("n", "<leader>tpy", ":lua _PYTHON_TOGGLE()<CR>")
 
-local floating_term = Terminal:new({ hidden = true, direction = "float" })
+local floating_term = Terminal:new({ hidden = true, direction = "float", close_on_exit = true, count = 5 })
 function _FLOATING_TOGGLE()
     floating_term:toggle()
 end
 vim.keymap.set("n", "<leader>fl", ":lua _FLOATING_TOGGLE()<CR>")
+-- vim.keymap.set("n", "<leader>fl", "<cmd>4TermExec cmd='' direction=float close_on_exit='true'<CR>")
 
 local htop = Terminal:new({ cmd = "htop", hidden = true, direction = "float" })
 function _HTOP_TOGGLE()
