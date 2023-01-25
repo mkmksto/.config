@@ -5,8 +5,8 @@ if not cmp_status then
 end
 
 -- import nvim-cmp plugin safely
-local cmp_config_status, cmp_config = pcall(require, "cmp")
-if not cmp_config_status then
+local cmp_types_status, cmp_types_config = pcall(require, "cmp.types")
+if not cmp_types_status then
     return
 end
 
@@ -26,6 +26,17 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
+
+-- https://www.reddit.com/r/neovim/comments/woih9n/how_to_set_lsp_autocomplete_priority/
+-- https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/types/lsp.lua
+local function deprioritize_snippet(entry1, entry2)
+    if entry1:get_kind() == cmp_types_config.lsp.CompletionItemKind.Snippet then
+        return false
+    end
+    if entry2:get_kind() == cmp_types_config.lsp.CompletionItemKind.Snippet then
+        return true
+    end
+end
 
 -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 cmp.setup({
@@ -69,14 +80,17 @@ cmp.setup({
     }),
     -- https://github.com/hrsh7th/nvim-cmp/issues/183
     -- https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
+    -- (Lower Emmet Snippets) https://www.reddit.com/r/neovim/comments/woih9n/how_to_set_lsp_autocomplete_priority/
     sorting = {
         priority_weight = 1.0,
         comparators = {
+            deprioritize_snippet,
             cmp.config.compare.locality,
             cmp.config.compare.recently_used,
             cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
             cmp.config.compare.offset,
             cmp.config.compare.exact,
+            cmp.config.compare.scopes,
             cmp.config.compare.kind,
             cmp.config.compare.sort_text,
             cmp.config.compare.order,
