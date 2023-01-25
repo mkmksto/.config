@@ -4,6 +4,12 @@ if not cmp_status then
     return
 end
 
+-- import nvim-cmp plugin safely
+local cmp_config_status, cmp_config = pcall(require, "cmp")
+if not cmp_config_status then
+    return
+end
+
 -- import luasnip plugin safely
 local luasnip_status, luasnip = pcall(require, "luasnip")
 if not luasnip_status then
@@ -55,12 +61,27 @@ cmp.setup({
     }),
     -- sources for autocompletion
     sources = cmp.config.sources({
-        { name = "nvim_lsp", max_item_count = 8 }, -- lsp as source for autocompletion
+        { name = "nvim_lsp", max_item_count = 8, priority = 10 }, -- lsp as source for autocompletion
         -- { name = "nvim_lsp", max_item_count = 8, keyword_length = 6 }, -- lsp as source for autocompletion
-        -- { name = "luasnip", max_item_count = 8 }, -- snippets
-        { name = "buffer" }, -- text within current buffer
-        { name = "path", max_item_count = 8 }, -- file system paths
+        { name = "buffer", priority = 8 }, -- text within current buffer
+        { name = "path", max_item_count = 8, priority = 7 }, -- file system paths
+        { name = "luasnip", max_item_count = 8, priority = 5 }, -- snippets
     }),
+    -- https://github.com/hrsh7th/nvim-cmp/issues/183
+    -- https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
+    sorting = {
+        priority_weight = 1.0,
+        comparators = {
+            cmp.config.compare.locality,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.order,
+        },
+    },
     formatting = {
         format = lspkind.cmp_format({
             maxwidth = 35,
