@@ -112,6 +112,30 @@ return require("packer").startup(function(use)
         branch = "0.7.2",
     })
 
+    -- use({
+    --     "roobert/tailwindcss-colorizer-cmp.nvim",
+    --     -- optionally, override the default options:
+    --     config = function()
+    --         require("tailwindcss-colorizer-cmp").setup({
+    --             color_square_width = 2,
+    --         })
+    --     end,
+    -- })
+
+    -- use({
+    --     "themaxmarchuk/tailwindcss-colors.nvim",
+    --     -- load only on require("tailwindcss-colors")
+    --     module = "tailwindcss-colors",
+    --     -- run the setup function after plugin is loaded
+    --     config = function()
+    --         -- pass config options here (or nothing to use defaults)
+    --         require("tailwindcss-colors").setup()
+    --     end,
+    -- })
+
+    -- -- Dashboard
+    -- use({ "glepnir/dashboard-nvim" })
+
     -- -- assistants and AI
     -- use({
     --     "jackMort/ChatGPT.nvim",
