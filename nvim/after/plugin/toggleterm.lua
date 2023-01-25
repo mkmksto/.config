@@ -10,7 +10,9 @@ toggleterm.setup({
     hide_numbers = true, -- hide the number column in toggleterm buffers
     persist_size = true,
     direction = "horizontal",
+    close_on_exit = false,
     start_in_insert = true,
+    shell = vim.o.shell,
 })
 
 function _G.set_terminal_keymaps()
@@ -27,7 +29,7 @@ end
 
 -- https://stackoverflow.com/questions/13511084/vim-set-cursor-position-in-command-line
 vim.keymap.set("n", "<leader>`", ":ToggleTerm direction=horizontal<C-Left><Left>")
-vim.keymap.set("n", "<C-`>", ":ToggleTermToggleAll<CR>")
+vim.keymap.set({ "n", "t" }, "<C-`>", "<Esc><C-\\><C-n><cmd>ToggleTermToggleAll<CR>")
 vim.keymap.set("n", "<leader>lz", ":LazyGit<CR>")
 -- vim.keymap.set("n", "<ledaer>h", "<C-w>h")
 
