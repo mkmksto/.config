@@ -87,17 +87,49 @@ lspconfig.tailwindcss.setup({
 
 -- lspconfig.tsserver.setup({})
 
--- note: this is a plugin
-typescript.setup({
-    server = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
-    },
-})
+-- -- note: this is a plugin
+-- typescript.setup({
+--     server = {
+--         capabilities = capabilities,
+--         on_attach = on_attach,
+--         -- filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+--     },
+-- })
 
+local util = require("lspconfig.util")
+local function get_typescript_server_path(root_dir)
+    -- local global_ts = "/home/[yourusernamehere]/.npm/lib/node_modules/typescript/lib"
+    local global_ts = "/home/lemongrass/.local/share/pnpm/global/5/node_modules/typescript/lib"
+    -- Alternative location if installed as root:
+    -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+    local found_ts = ""
+    local function check_dir(path)
+        found_ts = util.path.join(path, "node_modules", "typescript", "lib")
+        if util.path.exists(found_ts) then
+            return path
+        end
+    end
+    if util.search_ancestors(root_dir, check_dir) then
+        return found_ts
+    else
+        return global_ts
+    end
+end
+
+-- to prevent typescript errors within vue, enable takeover mode
+-- https://github.com/garcia5/dotfiles/blob/master/files/nvim/lua/ag/lsp_config.lua#L243
+-- https://www.reddit.com/r/neovim/comments/v4mhsv/neovim_setup_for_fullstack_web_development_with/
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
+-- NOTE: in order for `take over mode` to work, you have to enable the filetypes table (for ts and vue)
+-- in addition to the other configs below
+-- also, disable your other TS servers
 lspconfig.volar.setup({
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
     capabilities = capabilities,
+    on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+        -- print(get_typescript_server_path(new_root_dir)) -- for debugging TS server path
+    end,
     on_attach = on_attach,
 })
 
