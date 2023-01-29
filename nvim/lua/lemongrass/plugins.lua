@@ -50,6 +50,7 @@ return require("packer").startup(function(use)
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-buffer") -- recommend text from current buffer
     use("hrsh7th/cmp-path") -- recommend paths
+    use("hrsh7th/cmp-cmdline")
 
     -- snippets
     use("L3MON4D3/LuaSnip")
@@ -141,6 +142,8 @@ return require("packer").startup(function(use)
     -- })
 
     -- games
-    --
     use("ThePrimeagen/vim-be-good")
+
+    -- notetaking
+    use("opdavies/toggle-checkbox.nvim")
 end)

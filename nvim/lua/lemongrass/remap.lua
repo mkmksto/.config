@@ -75,3 +75,6 @@ keymap.set("n", "Q", "<nop>")
 -- docstrings
 keymap.set({ "n" }, "<leader>dpy", "<cmd>DogeGenerate google<CR>", opts)
 keymap.set({ "n" }, "<leader>djs", "<cmd>DogeGenerate jsdoc<CR>", opts)
+
+-- toggles markdown checkboxes
+keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
