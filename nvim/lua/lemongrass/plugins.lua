@@ -10,26 +10,18 @@ return require("packer").startup(function(use)
 
     use("bluz71/vim-nightfly-guicolors")
 
-    use("mhartington/oceanic-next")
-
     use("nyoom-engineering/oxocarbon.nvim")
 
-    use("lmburns/kimbox")
+    use("olimorris/onedarkpro.nvim")
 
-    use({
-        "ray-x/starry.nvim",
-        setup = function()
-            -- see example setup below
-            vim.g.starry_italic_comments = true
-        end,
-    })
+    use("lmburns/kimbox")
 
     -- refactoring
     use("ThePrimeagen/refactoring.nvim")
     use("windwp/nvim-spectre")
 
-    -- use("numToStr/Comment.nvim")
-    use("terrortylor/nvim-comment")
+    use("numToStr/Comment.nvim")
+    -- use("terrortylor/nvim-comment")
 
     -- docstrings
     use({
@@ -133,9 +125,6 @@ return require("packer").startup(function(use)
     --     end,
     -- })
 
-    -- -- Dashboard
-    -- use({ "glepnir/dashboard-nvim" })
-
     -- -- assistants and AI
     -- use({
     --     "jackMort/ChatGPT.nvim",
@@ -150,4 +139,8 @@ return require("packer").startup(function(use)
     --         "nvim-telescope/telescope.nvim",
     --     },
     -- })
+
+    -- games
+    --
+    use("ThePrimeagen/vim-be-good")
 end)

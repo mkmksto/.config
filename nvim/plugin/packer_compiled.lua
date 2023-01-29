@@ -214,10 +214,10 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["oceanic-next"] = {
+  ["onedarkpro.nvim"] = {
     loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/oceanic-next",
-    url = "https://github.com/mhartington/oceanic-next"
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["oxocarbon.nvim"] = {
     loaded = true,
@@ -238,12 +238,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
     url = "https://github.com/ThePrimeagen/refactoring.nvim"
-  },
-  ["starry.nvim"] = {
-    loaded = true,
-    needs_bufread = false,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/starry.nvim",
-    url = "https://github.com/ray-x/starry.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -271,6 +265,11 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-doge"] = {
     commands = { "DogeGenerate", "DogeCreateDocStandard" },
     loaded = false,
@@ -292,13 +291,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: starry.nvim
-time([[Setup for starry.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\27starry_italic_comments\6g\bvim\0", "setup", "starry.nvim")
-time([[Setup for starry.nvim]], false)
-time([[packadd for starry.nvim]], true)
-vim.cmd [[packadd starry.nvim]]
-time([[packadd for starry.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
