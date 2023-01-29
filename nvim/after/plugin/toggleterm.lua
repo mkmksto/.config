@@ -13,6 +13,7 @@ toggleterm.setup({
     close_on_exit = false,
     start_in_insert = true,
     shell = vim.o.shell,
+    auto_scroll = true,
 })
 
 function _G.set_terminal_keymaps()
