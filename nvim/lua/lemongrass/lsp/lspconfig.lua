@@ -24,9 +24,9 @@ local on_attach = function(client, bufnr)
 
     -- set keybinds
     keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references (and implementation if there are any)
-    keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration (essentially a less good version of Lspsaga goto_definition, can be buggy)
+    -- keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration (essentially a less good version of Lspsaga goto_definition, can be buggy)
     keymap.set("n", "gP", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-    keymap.set("n", "ggd", "<cmd>Lspsaga goto_definition<CR>", opts)
+    keymap.set("n", "gD", "<cmd>Lspsaga goto_definition<CR>", opts)
     keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
     keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
     keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
