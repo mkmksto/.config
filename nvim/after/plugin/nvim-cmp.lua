@@ -94,6 +94,7 @@ cmp.setup({
     sorting = {
         priority_weight = 1.0,
         comparators = {
+            deprioritize_snippet,
             require("cmp-under-comparator").under,
             cmp.config.compare.exact,
             cmp.config.compare.recently_used,
@@ -106,7 +107,6 @@ cmp.setup({
             --     end
             -- end,
             cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
-            deprioritize_snippet,
             cmp.config.compare.offset,
             cmp.config.compare.scopes,
             cmp.config.compare.kind,
@@ -118,6 +118,12 @@ cmp.setup({
         format = lspkind.cmp_format({
             maxwidth = 35,
             ellipsis_char = "...",
+            menu = {
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+                path = "[Path]",
+            },
         }),
     },
 })
