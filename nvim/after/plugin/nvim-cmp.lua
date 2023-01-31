@@ -147,6 +147,7 @@ cmp.setup.cmdline(":", {
         ["<C-j>"] = { c = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }) },
         ["<C-k>"] = { c = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }) },
         ["<Tab>"] = { c = cmp.mapping.confirm({ select = false }) },
+        ["<C-Space>"] = { c = cmp.mapping.complete() }, -- show completion suggestions
     }),
     sources = cmp.config.sources({
         { name = "path" },
