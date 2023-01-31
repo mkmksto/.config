@@ -74,8 +74,8 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<Tab>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-k>"] = cmp.mapping.scroll_docs(-4), -- Ctrl + j/k to scroll through cmp docs
+        ["<C-j>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
@@ -93,10 +93,12 @@ cmp.setup({
     -- (Lower Emmet Snippets) https://www.reddit.com/r/neovim/comments/woih9n/how_to_set_lsp_autocomplete_priority/
     sorting = {
         priority_weight = 1.0,
+        -- https://www.youtube.com/watch?v=p7TIag1GRDE&list=PLOe6AggsTaVuIXZU4gxWJpIQNHMrDknfN&index=23
         comparators = {
             deprioritize_snippet,
             require("cmp-under-comparator").under,
             cmp.config.compare.exact,
+            cmp.config.compare.length, -- prefer shorter over longer matches
             cmp.config.compare.recently_used,
             cmp.config.compare.locality,
             -- function(entry1, entry2)
