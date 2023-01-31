@@ -126,6 +126,10 @@ cmp.setup({
             },
         }),
     },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
 })
 
 -- https://github.com/hrsh7th/cmp-cmdline
