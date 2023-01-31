@@ -52,6 +52,8 @@ return require("packer").startup(function(use)
     use("hrsh7th/cmp-path") -- recommend paths
     use("hrsh7th/cmp-cmdline")
     use("lukas-reineke/cmp-under-comparator")
+    use("hrsh7th/cmp-nvim-lsp-signature-help")
+    use("uga-rosa/cmp-dictionary")
 
     -- snippets
     use("L3MON4D3/LuaSnip")

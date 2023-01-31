@@ -26,7 +26,7 @@ keymap.set("n", "<Tab>", "<cmd>bnext<CR>")
 keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>")
 keymap.set("n", "<leader>bd", "<cmd>Bdelete!<CR>")
 
-keymap.set("n", "<C-s>", "<cmd>write<CR>") -- i think this is better, avoids typos
+keymap.set("n", "<C-s>", "<cmd>write<CR>", opts) -- i think this is better, avoids typos
 
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
