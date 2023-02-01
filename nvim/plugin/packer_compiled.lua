@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -94,15 +99,35 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-dictionary"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-dictionary",
+    url = "https://github.com/uga-rosa/cmp-dictionary"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-under-comparator"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-under-comparator",
+    url = "https://github.com/lukas-reineke/cmp-under-comparator"
   },
   cmp_luasnip = {
     loaded = true,
@@ -174,10 +199,15 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-comment"] = {
+  ["nvim-dap"] = {
     loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -248,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggle-checkbox.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/toggle-checkbox.nvim",
+    url = "https://github.com/opdavies/toggle-checkbox.nvim"
   },
   ["toggleterm.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
