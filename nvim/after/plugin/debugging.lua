@@ -60,9 +60,12 @@ map("n", "<F5>", '<cmd>lua require"dap".continue()<CR>', {})
 map("n", "<F3>", '<cmd>lua require"dap".toggle_breakpoint()<CR>', {})
 -- logpoint (breakpoints but simply print something to console/stdout)
 map("n", "<C-l>", '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log Point Msg: "))<CR>', {})
-map("n", "<Up>", '<cmd>lua require"dap".step_over()<CR>', {})
-map("n", "<Right>", '<cmd>lua require"dap".step_into()<CR>', {}) -- goes into nested function calls
-map("n", "<Left>", '<cmd>lua require"dap".step_out()<CR>', {}) -- exit from nested function
+
+map("n", "<Right>", '<cmd>lua require"dap".step_over()<CR>', {})
+map("n", "<Left>", '<cmd>lua require"dap".step_back()<CR>', {})
+map("n", "<Down>", '<cmd>lua require"dap".step_into()<CR>', {}) -- goes into nested function calls
+map("n", "<Up>", '<cmd>lua require"dap".step_out()<CR>', {}) -- exit from nested function
+
 map("n", "<F6>", '<cmd>lua require"dap".repl.open()<CR>', {})
 map("n", "<leader>bgl", '<cmd>lua require"dap".run_last()<CR>', {}) -- run last debugger
 
