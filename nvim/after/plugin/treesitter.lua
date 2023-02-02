@@ -19,6 +19,16 @@ treesitter.setup({
         "bash",
         "vim",
     },
+    -- https://www.lazyvim.org/plugins/treesitter
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            scope_incremental = "<nop>",
+            node_decremental = "<bs>",
+        },
+    },
 
     indent = { enable = true },
 
