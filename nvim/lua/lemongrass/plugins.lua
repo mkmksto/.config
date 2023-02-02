@@ -13,12 +13,10 @@ return require("packer").startup(function(use)
 
     use("nvim-lua/plenary.nvim")
 
-    -- use("bluz71/vim-nightfly-guicolors")
-
+    -- color schemes
     use("nyoom-engineering/oxocarbon.nvim")
-
     use("olimorris/onedarkpro.nvim")
-
+    -- use("bluz71/vim-nightfly-guicolors")
     -- use("lmburns/kimbox")
 
     -- refactoring
@@ -26,7 +24,6 @@ return require("packer").startup(function(use)
     use("windwp/nvim-spectre")
 
     use("numToStr/Comment.nvim")
-    -- use("terrortylor/nvim-comment")
 
     -- docstrings
     use({
@@ -43,10 +40,10 @@ return require("packer").startup(function(use)
     -- surrounds
     use("tpope/vim-surround")
 
+    -- file explorer
     use("nvim-tree/nvim-tree.lua")
     use("kyazdani42/nvim-web-devicons")
     use("nvim-lualine/lualine.nvim")
-
     -- c@m https://youtu.be/vJAmjAax2H0?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=453
     use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
     use("moll/vim-bbye")
@@ -122,6 +119,13 @@ return require("packer").startup(function(use)
 
     -- notetaking
     use("opdavies/toggle-checkbox.nvim")
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+    })
 
     -- profiling
     use("dstein64/vim-startuptime")
