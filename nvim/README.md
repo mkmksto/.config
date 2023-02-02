@@ -38,3 +38,6 @@
 ## Common issues
 
 - `;5u` appearing when i try to exit a terminal: this happens when you press `Ctrl+Enter` (sometimes i forget that i'm actually holding `ctrl` because of `ctrl+space` zsh autocomplete)
+- `pylint` false positives about import error: probably has to do with `NULL LS` being confused about which `pylint` installation to use, when pylint is installed from mason, it attempts to use that, and as a result, it may try to resolve import dependencies from where the global `mason` pylint package is installed.
+  - `FIX`: under `mason.lua`, comment out the part where `pylint` is under `null_ls`'s `ensure_installed` packages
+  - then simply install pylint inside the venv of your project (seems to work lol idk why)

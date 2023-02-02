@@ -47,7 +47,7 @@ mason_null_ls.setup({
         "stylua",
         "eslint_d",
         "black",
-        "pylint",
+        -- "pylint", -- if disabled, sometimes it uses the venv pylint instead?
         "isort",
     },
 })
