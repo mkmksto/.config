@@ -8,13 +8,13 @@ return require("packer").startup(function(use)
 
     use("nvim-lua/plenary.nvim")
 
-    use("bluz71/vim-nightfly-guicolors")
+    -- use("bluz71/vim-nightfly-guicolors")
 
     use("nyoom-engineering/oxocarbon.nvim")
 
     use("olimorris/onedarkpro.nvim")
 
-    use("lmburns/kimbox")
+    -- use("lmburns/kimbox")
 
     -- refactoring
     use("ThePrimeagen/refactoring.nvim")
@@ -111,42 +111,6 @@ return require("packer").startup(function(use)
         "uga-rosa/ccc.nvim",
         branch = "0.7.2",
     })
-
-    -- use({
-    --     "roobert/tailwindcss-colorizer-cmp.nvim",
-    --     -- optionally, override the default options:
-    --     config = function()
-    --         require("tailwindcss-colorizer-cmp").setup({
-    --             color_square_width = 2,
-    --         })
-    --     end,
-    -- })
-
-    -- use({
-    --     "themaxmarchuk/tailwindcss-colors.nvim",
-    --     -- load only on require("tailwindcss-colors")
-    --     module = "tailwindcss-colors",
-    --     -- run the setup function after plugin is loaded
-    --     config = function()
-    --         -- pass config options here (or nothing to use defaults)
-    --         require("tailwindcss-colors").setup()
-    --     end,
-    -- })
-
-    -- -- assistants and AI
-    -- use({
-    --     "jackMort/ChatGPT.nvim",
-    --     config = function()
-    --         require("chatgpt").setup({
-    --             -- optional configuration
-    --         })
-    --     end,
-    --     requires = {
-    --         "MunifTanjim/nui.nvim",
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-telescope/telescope.nvim",
-    --     },
-    -- })
 
     -- games
     use("ThePrimeagen/vim-be-good")

@@ -135,24 +135,24 @@ cmp.setup({
     },
 })
 
------------------------------------------------------------------------
---
--- Configuring where dictionary entries appear
---
---
-require("cmp_dictionary").setup({
-    dic = {
-        -- If you always use the English dictionary, The following settings are suitable:
-        ["*"] = "~/.config/cmp_dictionary_sources/my.dict",
-    },
-})
+-- -----------------------------------------------------------------------
+-- --
+-- -- Configuring where dictionary entries appear
+-- --
+-- --
+-- require("cmp_dictionary").setup({
+--     dic = {
+--         -- If you always use the English dictionary, The following settings are suitable:
+--         ["*"] = "~/.config/cmp_dictionary_sources/my.dict",
+--     },
+-- })
 
 cmp.setup.filetype("markdown", {
     sources = cmp.config.sources({
         { name = "nvim_lsp", max_item_count = 11, priority = 10 }, -- lsp as source for autocompletion
         { name = "buffer", max_item_count = 5, priority = 8 }, -- text within current buffer
         { name = "path", max_item_count = 5, priority = 7 }, -- file system paths
-        { name = "dictionary", max_item_count = 8, keyword_length = 2, priority = 6 },
+        -- { name = "dictionary", max_item_count = 8, keyword_length = 2, priority = 6 },
         { name = "luasnip", max_item_count = 4, priority = 5, keyword_length = 3 }, -- snippets
     }),
 })
