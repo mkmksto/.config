@@ -73,7 +73,7 @@ return require("packer").startup(function(use)
 
     -- formatting and linting
     use("jose-elias-alvarez/null-ls.nvim")
-    use("jayp0521/mason-null-ls.nvim") -- similar to mason-lspconfig but for formatters
+    use("jay-babu/mason-null-ls.nvim") -- similar to mason-lspconfig but for formatters
 
     -- DAP
     use("mfussenegger/nvim-dap")
@@ -153,4 +153,7 @@ return require("packer").startup(function(use)
 
     -- notetaking
     use("opdavies/toggle-checkbox.nvim")
+
+    -- profiling
+    use("dstein64/vim-startuptime")
 end)

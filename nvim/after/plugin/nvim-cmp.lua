@@ -153,6 +153,7 @@ cmp.setup.filetype("markdown", {
         { name = "buffer", max_item_count = 5, priority = 8 }, -- text within current buffer
         { name = "path", max_item_count = 5, priority = 7 }, -- file system paths
         { name = "dictionary", max_item_count = 8, keyword_length = 2, priority = 6 },
+        { name = "luasnip", max_item_count = 4, priority = 5, keyword_length = 3 }, -- snippets
     }),
 })
 
