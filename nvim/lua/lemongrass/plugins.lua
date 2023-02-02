@@ -1,3 +1,8 @@
+local packer = require("packer")
+packer.init({
+    snapshot_path = vim.fn.expand("~/.config/nvim/packer_snaps/"),
+})
+
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
