@@ -76,8 +76,8 @@ return require("packer").startup(function(use)
     use("jay-babu/mason-null-ls.nvim") -- similar to mason-lspconfig but for formatters
 
     -- DAP
-    use("mfussenegger/nvim-dap")
-    use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+    use({ "mfussenegger/nvim-dap", cmd = { "DapContinue", "DapToggleBreakpoint" } })
+    use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, after = "nvim-dap" })
 
     -- autoclosing
     use("windwp/nvim-autopairs")
