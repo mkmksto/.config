@@ -78,8 +78,8 @@ return require("packer").startup(function(use)
     use("jay-babu/mason-null-ls.nvim") -- similar to mason-lspconfig but for formatters
 
     -- DAP
-    use({ "mfussenegger/nvim-dap", opt = true, cmd = { "DapContinue", "DapToggleBreakpoint" } })
-    use({ "rcarriga/nvim-dap-ui", opt = true, requires = { "mfussenegger/nvim-dap" } })
+    use({ "mfussenegger/nvim-dap" })
+    use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
     -- autoclosing
     use("windwp/nvim-autopairs")
@@ -99,8 +99,9 @@ return require("packer").startup(function(use)
         end,
     })
 
-    --scrollbar
+    --scrollbar and other UI elements
     use("dstein64/nvim-scrollview")
+    use("lukas-reineke/indent-blankline.nvim")
 
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
