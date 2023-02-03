@@ -28,6 +28,15 @@ telescope.setup({
                 ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             },
         },
+        file_ignore_patterns = {
+            "static",
+            "templates",
+            "**/pnpm-lock.yaml",
+            "**/package-lock.json",
+            "dictionary_files",
+            "*.yaml",
+            ".yaml",
+        },
     },
 })
 
