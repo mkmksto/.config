@@ -9,11 +9,11 @@ if not actions_setup then
 end
 
 local builtin = require("telescope.builtin")
--- project files
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
--- fuzzy finding (git file search)
-vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
-
+-- -- project files
+-- vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+-- -- fuzzy finding (git file search)
+-- vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
+--
 -- something similar @ remap.lua (except that one only searches inside files, this one includes the file names)
 vim.keymap.set("n", "<leader>ps", function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })

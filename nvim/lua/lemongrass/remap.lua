@@ -55,6 +55,17 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find text throu
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string the cursor is on throught proj
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+keymap.set("n", "<leader>tlk", "<cmd>Telescope keymaps<cr>")
+keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>")
+keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<CR>")
+keymap.set("n", "<leader>tman", "<cmd>Telescope man_pages<CR>") -- linux man pages
+keymap.set("n", "<leader>tgs", "<cmd>Telescope git_status<CR>")
+keymap.set("n", "<leader>thelp", "<cmd>Telescope help_tags<CR>")
+-- LSP stuff
+keymap.set("n", "<leader>tgf", "<cmd>Telescope lsp_references<CR>")
+keymap.set("n", "<leader>tgi", "<cmd>Telescope lsp_implementations<CR>")
+keymap.set("n", "<leader>tgd", "<cmd>Telescope lsp_definitions<CR>")
+keymap.set("n", "<leader>tty", "<cmd>Telescope lsp_type_definitions<CR>")
 
 -- Move text up and down (https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/keymappings.lua)
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
