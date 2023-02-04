@@ -16,5 +16,5 @@ vim.cmd([[hi LineNr guibg=#292734 ctermbg=DarkGreen]]) -- numbers at gutter
 -- vim.cmd([[hi TabLineFill guibg=#ffffff ctermbg=DarkGreen]])
 -- vim.cmd([[hi TabLine guibg=#ffffff]]) -- probably the entire tabline bar
 -- vim.cmd([[hi TabLineSel gui=underline guibg=#fcba03 guifg=#fcba03]]) -- active tab
--- vim.cmd([[hi TabLine    gui=NONE guibg=#333232]])
+vim.cmd([[hi TabLine    gui=NONE guibg=#333232]])
 -- vim.cmd([[hi Title    gui=NONE guibg=#fcba03 guifg=#ffffff]])
