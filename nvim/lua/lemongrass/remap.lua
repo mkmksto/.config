@@ -69,7 +69,7 @@ keymap.set("n", "<leader>thelp", "<cmd>Telescope help_tags<CR>")
 keymap.set("n", "<leader>tgf", "<cmd>Telescope lsp_references<CR>")
 keymap.set("n", "<leader>tgi", "<cmd>Telescope lsp_implementations<CR>")
 keymap.set("n", "<leader>tgd", "<cmd>Telescope lsp_definitions<CR>")
-keymap.set("n", "<leader>tty", "<cmd>Telescope lsp_type_definitions<CR>")
+keymap.set("n", "<leader>tT", "<cmd>Telescope lsp_type_definitions<CR>")
 
 ---------------------------
 --
