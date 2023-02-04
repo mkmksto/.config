@@ -17,4 +17,5 @@ clip_image.setup({
 --     return vim.api.nvim_buf_get_name(0)
 -- end
 --
--- vim.keymap.set("n", "<leader>ss", paste_img())
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>ss", "<cmd>PasteImg<CR>", opts)
