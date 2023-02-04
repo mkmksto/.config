@@ -44,6 +44,12 @@ function _PYTHON_TOGGLE()
 end
 vim.keymap.set("n", "<leader>tpy", ":lua _PYTHON_TOGGLE()<CR>")
 
+local node_js = Terminal:new({ cmd = "node", hidden = true, direction = "float" })
+function _NODE_TOGGLE()
+    node_js:toggle()
+end
+vim.keymap.set("n", "<leader>tpy", ":lua _NODE_TOGGLE()<CR>")
+
 local floating_term = Terminal:new({ hidden = true, direction = "float", close_on_exit = true, count = 5 })
 function _FLOATING_TOGGLE()
     floating_term:toggle()
