@@ -31,11 +31,9 @@ telescope.setup({
         file_ignore_patterns = {
             "static",
             "templates",
-            "**/pnpm-lock.yaml",
-            "**/package-lock.json",
+            "**/pnpm%-lock.yaml",
+            "**/package%-lock.json",
             "dictionary_files",
-            "*.yaml",
-            ".yaml",
         },
     },
 })
