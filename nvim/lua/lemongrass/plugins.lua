@@ -127,6 +127,7 @@ return require("packer").startup(function(use)
             vim.fn["mkdp#util#install"]()
         end,
     })
+    use("ekickx/clipboard-image.nvim")
 
     -- profiling
     use("dstein64/vim-startuptime")
