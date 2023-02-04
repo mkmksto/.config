@@ -103,16 +103,7 @@ return require("packer").startup(function(use)
     use("dstein64/nvim-scrollview")
     use("lukas-reineke/indent-blankline.nvim")
     -- Lua
-    use({
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup({
-                window = {
-                    width = 105,
-                },
-            })
-        end,
-    })
+    use("folke/zen-mode.nvim")
 
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
