@@ -93,3 +93,6 @@ keymap.set({ "n" }, "<leader>djs", "<cmd>DogeGenerate jsdoc<CR>", opts)
 
 -- toggles markdown checkboxes
 keymap.set("n", "<leader>tt", "<cmd>lua require('toggle-checkbox').toggle()<CR>", opts)
+
+-- https://github.com/jghauser/follow-md-links.nvim
+keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
