@@ -6,3 +6,8 @@ gui:
   expandFocusedSidePanel: false
   mainPanelSplitMode: "vertical"
   splitDiff: "auto" # one of 'auto' | 'always'
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
