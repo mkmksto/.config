@@ -14,6 +14,7 @@ treesitter.setup({
         "json",
         "toml",
         "markdown",
+        "markdown_inline",
         "svelte",
         "vue",
         "bash",
