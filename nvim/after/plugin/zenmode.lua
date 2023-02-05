@@ -5,7 +5,7 @@ end
 
 zen_mode.setup({
     window = {
-        width = 95,
+        width = 125,
         backdrop = 0.5,
     },
 })
