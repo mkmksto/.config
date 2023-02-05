@@ -8,10 +8,9 @@ packer.init({
 -- Only required if you have packer configured as `opt`
 
 return require("packer").startup(function(use)
-    -- Packer can manage itself
-    use("wbthomason/packer.nvim")
-
-    use("nvim-lua/plenary.nvim")
+    -- main
+    use({ "wbthomason/packer.nvim", lock = true })
+    use({ "nvim-lua/plenary.nvim", lock = true })
 
     -- color schemes
     use("nyoom-engineering/oxocarbon.nvim")
