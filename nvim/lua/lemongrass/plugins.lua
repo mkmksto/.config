@@ -13,18 +13,15 @@ return require("packer").startup(function(use)
     use({ "nvim-lua/plenary.nvim", lock = true })
 
     -- color schemes
-    use("nyoom-engineering/oxocarbon.nvim")
-    use("olimorris/onedarkpro.nvim")
-    -- use("bluz71/vim-nightfly-guicolors")
-    -- use("lmburns/kimbox")
+    use({ "nyoom-engineering/oxocarbon.nvim", lock = true })
+    use({ "olimorris/onedarkpro.nvim", lock = true })
 
     -- refactoring
-    use("ThePrimeagen/refactoring.nvim")
-    use("windwp/nvim-spectre")
+    use({ "ThePrimeagen/refactoring.nvim", lock = true })
+    use({ "windwp/nvim-spectre", lock = true })
 
-    use("numToStr/Comment.nvim")
-
-    -- docstrings
+    -- comments and docstrings
+    use({ "numToStr/Comment.nvim", lock = true })
     use({
         "kkoomen/vim-doge",
         run = ":call doge#install()",
@@ -34,60 +31,61 @@ return require("packer").startup(function(use)
         cmd = { "DogeGenerate", "DogeCreateDocStandard" },
         disable = false,
         event = "VimEnter",
+        lock = true,
     })
 
     -- surrounds
-    use("tpope/vim-surround")
+    use({ "tpope/vim-surround", lock = true })
 
     -- file explorer
-    use("nvim-tree/nvim-tree.lua")
-    use("kyazdani42/nvim-web-devicons")
-    use("nvim-lualine/lualine.nvim")
+    use({ "nvim-tree/nvim-tree.lua", lock = true })
+    use({ "kyazdani42/nvim-web-devicons", lock = true })
+    use({ "nvim-lualine/lualine.nvim", lock = true })
     -- c@m https://youtu.be/vJAmjAax2H0?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=453
-    use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
-    use("moll/vim-bbye")
+    use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons", lock = true })
+    use({ "moll/vim-bbye", lock = true })
 
     -- aucomplete
-    use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-buffer") -- recommend text from current buffer
-    use("hrsh7th/cmp-path") -- recommend paths
-    use("hrsh7th/cmp-cmdline")
-    use("lukas-reineke/cmp-under-comparator")
-    use("hrsh7th/cmp-nvim-lsp-signature-help")
-    use("uga-rosa/cmp-dictionary")
+    use({ "hrsh7th/nvim-cmp", lock = true })
+    use({ "hrsh7th/cmp-buffer", lock = true }) -- recommend text from current buffer
+    use({ "hrsh7th/cmp-path", lock = true }) -- recommend paths
+    use({ "hrsh7th/cmp-cmdline", lock = true })
+    use({ "lukas-reineke/cmp-under-comparator", lock = true })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
+    use({ "uga-rosa/cmp-dictionary", lock = true })
 
     -- snippets
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
+    use({ "L3MON4D3/LuaSnip", lock = true })
+    use({ "saadparwaiz1/cmp_luasnip", lock = true })
+    use({ "rafamadriz/friendly-snippets", lock = true })
 
     -- managing and installing LSP servers (that mason will install)
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim") -- bridges mason and nvim-lspconfig
+    use({ "williamboman/mason.nvim", lock = true })
+    use({ "williamboman/mason-lspconfig.nvim", lock = true }) -- bridges mason and nvim-lspconfig
 
     -- LSP servers config
-    use("neovim/nvim-lspconfig") -- for configuring LSP servers
-    use("hrsh7th/cmp-nvim-lsp") -- so that the lsp appears in autocompletion
-    use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
-    use("jose-elias-alvarez/typescript.nvim")
-    use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+    use({ "neovim/nvim-lspconfig", lock = true }) -- for configuring LSP servers
+    use({ "hrsh7th/cmp-nvim-lsp", lock = true }) -- so that the lsp appears in autocompletion
+    use({ "glepnir/lspsaga.nvim", branch = "main", lock = true }) -- enhanced lsp uis
+    use({ "jose-elias-alvarez/typescript.nvim", lock = true })
+    use({ "onsails/lspkind.nvim", lock = true }) -- vs-code like icons for autocompletion
 
     -- formatting and linting
-    use("jose-elias-alvarez/null-ls.nvim")
-    use("jay-babu/mason-null-ls.nvim") -- similar to mason-lspconfig but for formatters
+    use({ "jose-elias-alvarez/null-ls.nvim", lock = true })
+    use({ "jay-babu/mason-null-ls.nvim", lock = true }) -- similar to mason-lspconfig but for formatters
 
     -- DAP
-    use({ "mfussenegger/nvim-dap" })
-    use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+    use({ "mfussenegger/nvim-dap", lock = true })
+    use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, lock = true })
 
     -- autoclosing
-    use("windwp/nvim-autopairs")
-    use("windwp/nvim-ts-autotag")
+    use({ "windwp/nvim-autopairs", lock = true })
+    use({ "windwp/nvim-ts-autotag", lock = true })
 
     -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
-    use("lewis6991/gitsigns.nvim")
-    -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-    use("kdheepak/lazygit.nvim")
+    use({ "lewis6991/gitsigns.nvim", lock = true })
+    -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", lock = true  })
+    use({ "kdheepak/lazygit.nvim", lock = true })
 
     -- terminal
     use({
@@ -96,40 +94,40 @@ return require("packer").startup(function(use)
         config = function()
             require("toggleterm").setup()
         end,
+        lock = true,
     })
 
     --scrollbar and other UI elements
-    use("dstein64/nvim-scrollview")
-    use("lukas-reineke/indent-blankline.nvim")
+    use({ "dstein64/nvim-scrollview", lock = true })
+    use({ "lukas-reineke/indent-blankline.nvim", lock = true })
     -- Lua
-    use("folke/zen-mode.nvim")
+    use({ "folke/zen-mode.nvim", lock = true })
 
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", lock = true })
+    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", lock = true })
 
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
 
-    -- color pickers/colorizers
-    -- https://www.reddit.com/r/neovim/comments/xk75hb/cccnvim_added_colors_highlighting/
-    use({
-        "uga-rosa/ccc.nvim",
-        branch = "0.7.2",
-    })
+    -- colors
+    use({ "uga-rosa/ccc.nvim", branch = "0.7.2", lock = true })
 
     -- games
-    use("ThePrimeagen/vim-be-good")
+    use({ "ThePrimeagen/vim-be-good", lock = true })
 
     -- notetaking
-    use("opdavies/toggle-checkbox.nvim")
+    use({ "opdavies/toggle-checkbox.nvim", lock = true })
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
         run = function()
             vim.fn["mkdp#util#install"]()
         end,
+        lock = true,
     })
-    use("ekickx/clipboard-image.nvim")
+    use({ "ekickx/clipboard-image.nvim", lock = true })
+    use({ "ixru/nvim-markdown", lock = true }) -- some tools for markdown files
+    use({ "jghauser/follow-md-links.nvim", lock = true })
 
     -- profiling
-    use("dstein64/vim-startuptime")
+    use({ "dstein64/vim-startuptime", lock = true })
 end)

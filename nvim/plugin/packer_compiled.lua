@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/ccc.nvim",
     url = "https://github.com/uga-rosa/ccc.nvim"
   },
+  ["clipboard-image.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/clipboard-image.nvim",
+    url = "https://github.com/ekickx/clipboard-image.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["follow-md-links.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/follow-md-links.nvim",
+    url = "https://github.com/jghauser/follow-md-links.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -205,11 +215,8 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    commands = { "DapContinue", "DapToggleBreakpoint" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/nvim-dap",
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-ui"] = {
@@ -221,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-markdown"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-markdown",
+    url = "https://github.com/ixru/nvim-markdown"
   },
   ["nvim-scrollview"] = {
     loaded = true,
@@ -330,6 +342,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
@@ -341,20 +358,6 @@ time([[Config for toggleterm.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'DapContinue', function(cmdargs)
-          require('packer.load')({'nvim-dap'}, { cmd = 'DapContinue', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('DapContinue ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'DapToggleBreakpoint', function(cmdargs)
-          require('packer.load')({'nvim-dap'}, { cmd = 'DapToggleBreakpoint', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('DapToggleBreakpoint ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdargs)
           require('packer.load')({'vim-doge'}, { cmd = 'DogeCreateDocStandard', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
