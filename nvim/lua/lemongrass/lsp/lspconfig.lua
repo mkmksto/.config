@@ -143,7 +143,7 @@ end
 -- in addition to the other configs below
 -- also, disable your other TS servers
 lspconfig.volar.setup({
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
     capabilities = capabilities,
     on_new_config = function(new_config, new_root_dir)
         new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
