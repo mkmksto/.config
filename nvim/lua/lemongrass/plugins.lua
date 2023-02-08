@@ -85,7 +85,7 @@ return require("packer").startup(function(use)
     -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
     use({ "lewis6991/gitsigns.nvim", lock = true })
     -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", lock = true  })
-    use({ "kdheepak/lazygit.nvim", lock = true })
+    -- use({ "kdheepak/lazygit.nvim", lock = true })
 
     -- terminal
     use({
