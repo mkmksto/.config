@@ -21,7 +21,9 @@ end)
 
 -- live grep over all of my projects and notes
 vim.keymap.set("n", "<leader>nts", function()
-    builtin.live_grep({ search_dirs = { "~/Documents/Github-repos/", "~/Documents/notes/" } })
+    builtin.live_grep({
+        search_dirs = { "~/Documents/Github-repos/", "~/Documents/notes/", "~/Documents/reference-repos/" },
+    })
 end)
 
 telescope.setup({
@@ -48,6 +50,12 @@ telescope.setup({
             ".svg",
         },
     },
+    -- -- doesn't work
+    -- extensions = {
+    --     live_grep_args = {
+    --         search_dirs = { "~/Documents/Github-repos/" },
+    --     },
+    -- },
 })
 
 telescope.load_extension("fzf")

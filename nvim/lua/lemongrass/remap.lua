@@ -58,12 +58,22 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string t
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 
 keymap.set("n", "<leader>thlp", "<cmd>Telescope help_tags<cr>")
-keymap.set("n", "<leader>tkm", "<cmd>Telescope keymaps<cr>")
+keymap.set("n", "<C-M-p>", "<cmd>Telescope keymaps<cr>")
 keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<CR>")
 keymap.set("n", "<leader>tman", "<cmd>Telescope man_pages<CR>") -- linux man pages
 keymap.set("n", "<leader>tgs", "<cmd>Telescope git_status<CR>")
 keymap.set("n", "<leader>thelp", "<cmd>Telescope help_tags<CR>")
+
+-- Telescope with rg syntax
+-- local telescope_rg = require("telescope").extensions.live_grep_args
+-- keymap.set("n", "<leader>trg", function()
+--     telescope_rg.live_grep_args({
+--         search_dirs = { "/home/lemongrass/Documents/Github-repos/" },
+--     })
+-- end)
+keymap.set("n", "<leader>trg", "<cmd>Telescope live_grep_args<CR>")
+-- keymap.set("n", "<leader>trg", '<cmd>Telescope live_grep_args search_dirs={"~/Documents/Github-repos/"}<CR>')
 
 -- Telescope LSP stuff
 keymap.set("n", "<leader>tgf", "<cmd>Telescope lsp_references<CR>")
@@ -94,5 +104,5 @@ keymap.set({ "n" }, "<leader>djs", "<cmd>DogeGenerate jsdoc<CR>", opts)
 -- toggles markdown checkboxes
 keymap.set("n", "<leader>tt", "<cmd>lua require('toggle-checkbox').toggle()<CR>", opts)
 
--- https://github.com/jghauser/follow-md-links.nvim
-keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
+-- -- https://github.com/jghauser/follow-md-links.nvim
+-- keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
