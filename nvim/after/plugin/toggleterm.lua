@@ -19,20 +19,14 @@ toggleterm.setup({
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }
     vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<leader>h", [[<C-W>h]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<leader>j", [[<C-W>j]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<leader>k", [[<C-W>k]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<leader>l", [[<C-W>l]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<C-w>v", [[]], opts)
-    -- vim.api.nvim_buf_set_keymap(0, "t", "<C-]>", [[:ToggleTerm2]], opts)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><Cmd>wincmd h<CR>]], opts)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><Cmd>wincmd l<CR>]], opts)
 end
 
 -- https://stackoverflow.com/questions/13511084/vim-set-cursor-position-in-command-line
-vim.keymap.set("n", "<leader>`", ":ToggleTerm direction=horizontal auto_scroll=true<C-Left><C-Left><Left>")
+-- vim.keymap.set("n", "<leader>`", ":ToggleTerm direction=horizontal auto_scroll=true<C-Left><C-Left><Left>") -- unnecessary, just to 2<C-\>, etc.
 vim.keymap.set({ "n", "t" }, "<C-`>", "<Esc><C-\\><C-n><cmd>ToggleTermToggleAll<CR>")
 -- vim.keymap.set("n", "<leader>lz", ":LazyGit<CR>")
--- vim.keymap.set("n", "<ledaer>h", "<C-w>h")
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
@@ -57,7 +51,6 @@ function _FLOATING_TOGGLE()
     floating_term:toggle()
 end
 vim.keymap.set("n", "<leader>fl", ":lua _FLOATING_TOGGLE()<CR>")
--- vim.keymap.set("n", "<leader>fl", "<cmd>4TermExec cmd='' direction=float close_on_exit='true'<CR>")
 
 local htop = Terminal:new({ cmd = "htop", hidden = true, direction = "float", count = 8 })
 function _HTOP_TOGGLE()
@@ -70,6 +63,3 @@ function _LAZYGIT_TOGGLE()
     lazygit:toggle()
 end
 vim.keymap.set("n", "<leader>lz", ":lua _LAZYGIT_TOGGLE()<CR>")
-
--- vim.keymap.set("n", "<C-\\>", ":ToggleTerm direction=float")
--- vim.keymap.set("n", "<C-\\>", ":ToggleTerm direction=horizontal")
