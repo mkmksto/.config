@@ -101,8 +101,20 @@ return require("packer").startup(function(use)
     -- Lua
     use({ "folke/zen-mode.nvim", lock = true })
 
+    -- Telescope
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", lock = true })
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", lock = true })
+    use({
+        "nvim-telescope/telescope.nvim",
+        -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim#installation
+        requires = {
+            { "nvim-telescope/telescope-live-grep-args.nvim" },
+        },
+        config = function()
+            require("telescope").load_extension("live_grep_args")
+        end,
+        branch = "0.1.x",
+        lock = true,
+    })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
 
