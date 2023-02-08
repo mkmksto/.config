@@ -19,6 +19,11 @@ vim.keymap.set("n", "<leader>ps", function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
+-- live grep over all of my projects and notes
+vim.keymap.set("n", "<leader>nts", function()
+    builtin.live_grep({ search_dirs = { "~/Documents/Github-repos/", "~/Documents/notes/" } })
+end)
+
 telescope.setup({
     defaults = {
         mappings = {
@@ -34,6 +39,13 @@ telescope.setup({
             "**/pnpm%-lock.yaml",
             "**/package%-lock.json",
             "dictionary_files",
+            ".json",
+            ".ico",
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".gif",
+            ".svg",
         },
     },
 })
