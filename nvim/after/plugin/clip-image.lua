@@ -17,5 +17,9 @@ clip_image.setup({
 --     return vim.api.nvim_buf_get_name(0)
 -- end
 --
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>ss", "<cmd>PasteImg<CR>", opts)
+vim.keymap.set(
+    "n",
+    "<leader>ss",
+    "<cmd>PasteImg<CR>",
+    { desc = "[Clipboard Image] Paste image from clipboard into markdown file", noremap = true, silent = true }
+)
