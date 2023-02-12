@@ -109,12 +109,15 @@ bufferline.setup({
         --   },
 
         tab_selected = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = { attribute = "bg", highlight = "Normal" },
+            -- fg = { attribute = "fg", highlight = "Normal" },
+            -- bg = { attribute = "bg", highlight = "#580651" },
+            fg = "#ffffff",
+            bg = "#580651",
+            bold = true,
         },
         tab = {
             fg = { attribute = "fg", highlight = "TabLine" },
-            bg = { attribute = "bg", highlight = "TabLine" },
+            bg = { attribute = "bg", highlight = "#580651" },
         },
         tab_close = {
             -- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
@@ -124,7 +127,7 @@ bufferline.setup({
 
         duplicate_selected = {
             fg = { attribute = "fg", highlight = "TabLineSel" },
-            bg = { attribute = "bg", highlight = "TabLineSel" },
+            bg = { attribute = "bg", highlight = "#580651" },
             italic = true,
         },
         duplicate_visible = {
