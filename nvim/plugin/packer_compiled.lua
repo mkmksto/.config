@@ -159,11 +159,6 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
-    url = "https://github.com/kdheepak/lazygit.nvim"
-  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -215,6 +210,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
+    config = { "\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\18load_launchjs\19dap.ext.vscode\frequire\0" },
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
@@ -294,7 +290,13 @@ _G.packer_plugins = {
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
+  ["telescope-live-grep-args.nvim"] = {
+    loaded = true,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
+    url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+  },
   ["telescope.nvim"] = {
+    config = { "\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\19live_grep_args\19load_extension\14telescope\frequire\0" },
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
@@ -351,26 +353,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\18load_launchjs\19dap.ext.vscode\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\19live_grep_args\19load_extension\14telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdargs)
-          require('packer.load')({'vim-doge'}, { cmd = 'DogeCreateDocStandard', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-doge'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('DogeCreateDocStandard ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'DogeGenerate', function(cmdargs)
           require('packer.load')({'vim-doge'}, { cmd = 'DogeGenerate', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-doge'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('DogeGenerate ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdargs)
+          require('packer.load')({'vim-doge'}, { cmd = 'DogeCreateDocStandard', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-doge'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DogeCreateDocStandard ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

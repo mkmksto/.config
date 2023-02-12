@@ -15,6 +15,7 @@ return require("packer").startup(function(use)
     -- color schemes
     use({ "nyoom-engineering/oxocarbon.nvim", lock = true })
     use({ "olimorris/onedarkpro.nvim", lock = true })
+    use({ "catppuccin/nvim", as = "catppuccin", lock = true })
 
     -- refactoring
     use({ "ThePrimeagen/refactoring.nvim", lock = true })
@@ -75,7 +76,13 @@ return require("packer").startup(function(use)
     use({ "jay-babu/mason-null-ls.nvim", lock = true }) -- similar to mason-lspconfig but for formatters
 
     -- DAP
-    use({ "mfussenegger/nvim-dap", lock = true })
+    use({
+        "mfussenegger/nvim-dap",
+        lock = true,
+        config = function()
+            require("dap.ext.vscode").load_launchjs()
+        end,
+    })
     use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, lock = true })
 
     -- autoclosing
