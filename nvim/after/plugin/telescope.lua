@@ -26,8 +26,29 @@ vim.keymap.set("n", "<leader>nts", function()
     })
 end)
 
+-- live grep over the python docs (searches for functions)
+vim.keymap.set("n", "<leader>pfun", function()
+    builtin.live_grep({
+        search_dirs = {
+            "~/.config/telescope_programming_docs/library_python/",
+            "~/.config/telescope_programming_docs/python3-2022/",
+        },
+        default_text = "^",
+    })
+end)
+
+-- live grep over the python docs (searches for functions)
+vim.keymap.set("n", "<leader>jfun", function()
+    builtin.live_grep({
+        search_dirs = { "~/.config/telescope_programming_docs/mdn-2022/" },
+        default_text = "^",
+    })
+end)
+
 telescope.setup({
     defaults = {
+        -- https://github.com/nvim-telescope/telescope.nvim/issues/895
+        path_display = { "truncate" },
         mappings = {
             i = {
                 ["<C-k>"] = actions.move_selection_previous,
