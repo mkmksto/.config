@@ -24,7 +24,7 @@ gitsigns.setup({
                 gs.next_hunk()
             end)
             return "<Ignore>"
-        end, { expr = true, desc = "[Gitsigns] navigate hunks" })
+        end, { expr = true, desc = "[Gitsigns] navigate hunks (previous hunk)" })
 
         map("n", "[c", function()
             if vim.wo.diff then
@@ -34,7 +34,7 @@ gitsigns.setup({
                 gs.prev_hunk()
             end)
             return "<Ignore>"
-        end, { expr = true, desc = "[Gitsigns] navigate hunks" })
+        end, { expr = true, desc = "[Gitsigns] navigate hunks (next hunk)" })
 
         -- Actions
         map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "[Gitsigns] stage hunk" })
