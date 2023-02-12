@@ -43,13 +43,18 @@ keymap.set("n", "<C-down>", "<C-w>6-", { desc = "Resize window" })
 keymap.set("n", "x", '"_x') -- do not copy a deleted char to register
 
 -- managing tabs
-keymap.set("n", "<leader>tn", ":tabnew<CR>", opts, { desc = "New tab" }) -- new tab
-keymap.set("n", "<leader>tc", ":tabclose<CR>", opts, { desc = "Close tab" }) -- close tab
-keymap.set("n", "<leader><Tab>", ":tabn<CR>", opts, { desc = "Next tab" }) -- next tab
-keymap.set("n", "<leader><S-Tab>", ":tabp<CR>", opts, { desc = "Previous tab" }) -- previous tab
+keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "New tab", noremap = true, silent = true })
+keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab", noremap = true, silent = true })
+keymap.set("n", "<leader><Tab>", "<cmd>tabn<CR>", { desc = "Next tab", noremap = true, silent = true })
+keymap.set("n", "<leader><S-Tab>", "<cmd>tabp<CR>", { desc = "Previous tab", noremap = true, silent = true })
 
 -- nvim tree toglee
-keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<CR>", opts, { desc = "Toggle File Explorer(NvimTree)" })
+keymap.set(
+    "n",
+    "<C-b>",
+    "<cmd>NvimTreeToggle<CR>",
+    { desc = "Toggle File Explorer(NvimTree)", noremap = true, silent = true }
+)
 
 ---------------------------
 --  Telescope
@@ -144,18 +149,21 @@ keymap.set(
     { "n" },
     "<leader>dpy",
     "<cmd>DogeGenerate google<CR>",
-    { desc = "[Doge] Generate Python docs docstrings in google standard" },
-    opts
+    { desc = "[Doge] Generate Python docs docstrings in google standard", noremap = true, silent = true }
 )
-keymap.set({ "n" }, "<leader>djs", "<cmd>DogeGenerate jsdoc<CR>", { desc = "[Doge] Generate JSdoc docstrings" }, opts)
+keymap.set(
+    { "n" },
+    "<leader>djs",
+    "<cmd>DogeGenerate jsdoc<CR>",
+    { desc = "[Doge] Generate JSdoc docstrings", noremap = true, silent = true }
+)
 
 -- toggles markdown checkboxes
 keymap.set(
     "n",
     "<leader>tt",
     "<cmd>lua require('toggle-checkbox').toggle()<CR>",
-    { desc = "Toggle markdown checkboxes" },
-    opts
+    { desc = "Toggle markdown checkboxes", noremap = true, silent = true }
 )
 
 -- -- https://github.com/jghauser/follow-md-links.nvim
