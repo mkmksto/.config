@@ -27,17 +27,17 @@ keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>bd", "<cmd>Bdelete!<CR>", { desc = "[B]uffer - [D]elete from list" })
 -- keymap.set("n", "<leader>bd", "<cmd>bdelete!<CR>")
 
-keymap.set("n", "<C-s>", "<cmd>write<CR>", opts) -- i think this is better, avoids typos
+keymap.set("n", "<C-s>", "<cmd>write<CR>", { desc = "Write to file/save file", noremap = true, silent = true })
 
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 -- Resize window
-keymap.set("n", "<C-left>", "<C-w>10<", { desc = "Resize window" })
-keymap.set("n", "<C-right>", "<C-w>10>", { desc = "Resize window" })
-keymap.set("n", "<C-up>", "<C-w>6+", { desc = "Resize window" })
-keymap.set("n", "<C-down>", "<C-w>6-", { desc = "Resize window" })
+keymap.set("n", "<C-left>", "<C-w>10<", { desc = "Resize window (decrease width)" })
+keymap.set("n", "<C-right>", "<C-w>10>", { desc = "Resize window (increase width)" })
+keymap.set("n", "<C-up>", "<C-w>6+", { desc = "Resize window (increase height)" })
+keymap.set("n", "<C-down>", "<C-w>6-", { desc = "Resize window (decrease height)" })
 
 -- https://youtu.be/vdn_pKJUda8?list=PLTqGJvc0HUn2GY0sW2L61lDuBaXBKnorO&t=1064
 keymap.set("n", "x", '"_x') -- do not copy a deleted char to register
@@ -60,8 +60,8 @@ keymap.set(
 --  Telescope
 local builtin = require("telescope.builtin")
 
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep inside files" }) -- find text throughout project
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Grep word under cursor" }) -- find string the cursor is on throught proj
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[Telescope] Grep inside files" }) -- find text throughout project
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[Telescope] Grep word under cursor" }) -- find string the cursor is on throught proj
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "[Telescope] - List Buffers" })
 
 keymap.set("n", "<leader>thlp", "<cmd>Telescope help_tags<cr>", { desc = "[Telescope] - show Help Documentation" })
@@ -77,7 +77,7 @@ keymap.set("n", "<leader>pdoc", function()
             "~/.config/telescope_programming_docs/python3-2022/",
         },
     })
-end, { desc = "Search for python modules (kw=docs/documentation, find files)" })
+end, { desc = "[Telescope] Search for python modules (kw=docs/documentation, find files)" })
 
 -- file search over python docs (each file is a text file/python builtin std lib)
 -- https://terokarvinen.com/2022/ks-kanasirja-offline-tui-dictionary/
@@ -85,14 +85,14 @@ keymap.set("n", "<leader>jdoc", function()
     builtin.find_files({
         search_dirs = { "~/.config/telescope_programming_docs/mdn-2022/" },
     })
-end, { desc = "Search for JS/MDN modules/functions/global builtins (kw=docs/documentation, find files)" })
+end, { desc = "[Telescope] Search for JS/MDN modules/functions/global builtins (kw=docs/documentation, find files)" })
 
 -- file search over TLDR
 keymap.set("n", "<leader>tldr", function()
     builtin.find_files({
         search_dirs = { "~/.config/telescope_programming_docs/tldr-2022/" },
     })
-end, { desc = "TLDR docs(terminal, bash, linux, mac, windows)" })
+end, { desc = "[Telescope] TLDR docs(terminal, bash, linux, mac, windows)" })
 
 keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<CR>", { desc = "[Telescope] git files" })
 keymap.set(
