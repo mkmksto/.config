@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>nts", function()
     builtin.live_grep({
         search_dirs = { "~/Documents/Github-repos/", "~/Documents/notes/", "~/Documents/reference-repos/" },
     })
-end)
+end, { desc = "[Telescope] Search through all of my repos, reference repos and notes (live grep, live_grep)" })
 
 -- live grep over the python docs (searches for functions)
 vim.keymap.set("n", "<leader>pfun", function()
@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>pfun", function()
         },
         default_text = "^",
     })
-end)
+end, { desc = "[Telescope] Search inside the python docs (particularly [F]unctions) (live grep, live_grep)" })
 
 -- live grep over the python docs (searches for functions)
 vim.keymap.set("n", "<leader>jfun", function()
@@ -43,8 +43,33 @@ vim.keymap.set("n", "<leader>jfun", function()
         search_dirs = { "~/.config/telescope_programming_docs/mdn-2022/" },
         default_text = "^",
     })
-end)
+end, { desc = "[Telescope] Search inside the MDN JS docs (live grep, live_grep)" })
 
+-----------------------
+--
+-- Cusotm Telescope finders
+-- https://www.youtube.com/watch?v=hQSZEZeZIPk
+-- TODO
+--
+--
+--
+--
+
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local sorters = require("telescope.sorters")
+
+------------------------
+--
+--
+--
+--
+-- TELESCOPE SETUP
+--
+--
+--
+--
+--
 telescope.setup({
     defaults = {
         -- https://github.com/nvim-telescope/telescope.nvim/issues/895

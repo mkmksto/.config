@@ -72,7 +72,7 @@ keymap.set("n", "<leader>pdoc", function()
             "~/.config/telescope_programming_docs/python3-2022/",
         },
     })
-end, { desc = "Search for python modules (kw=docs/documentation)" })
+end, { desc = "Search for python modules (kw=docs/documentation, find files)" })
 
 -- file search over python docs (each file is a text file/python builtin std lib)
 -- https://terokarvinen.com/2022/ks-kanasirja-offline-tui-dictionary/
@@ -80,7 +80,7 @@ keymap.set("n", "<leader>jdoc", function()
     builtin.find_files({
         search_dirs = { "~/.config/telescope_programming_docs/mdn-2022/" },
     })
-end, { desc = "Search for JS/MDN modules/functions/global builtins (kw=docs/documentation)" })
+end, { desc = "Search for JS/MDN modules/functions/global builtins (kw=docs/documentation, find files)" })
 
 -- file search over TLDR
 keymap.set("n", "<leader>tldr", function()
