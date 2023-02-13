@@ -63,3 +63,4 @@ key_bindings:
   - { key: Space, mods: Shift, chars: "\x1b" }
   - { key: Return, mods: Control, chars: "o\x1b" }
   - { key: Grave, mods: Control, chars: "\x1c" }
+  - { key: P, mods: Control|Shift, chars: "\x1b[80;5u" }

@@ -10,7 +10,7 @@ keymap.set("n", "}", "}zz")
 
 -- my remaps
 -- keymap.set("i", "<S-space", "<Esc>")
-keymap.set("i", "<C-j>", "<Esc>o")
+-- keymap.set("i", "<C-j>", "<Esc>o")
 keymap.set("n", "<C-Enter>", "o<Esc>", { desc = "Create empty newline" })
 keymap.set({ "i", "n", "v" }, "<C-z>", "")
 keymap.set("n", " ", "")
@@ -65,7 +65,7 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[Teles
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "[Telescope] - List Buffers" })
 
 keymap.set("n", "<leader>thlp", "<cmd>Telescope help_tags<cr>", { desc = "[Telescope] - show Help Documentation" })
-keymap.set("n", "<C-M-p>", "<cmd>Telescope keymaps<cr>", { desc = "[Telescope] - show all Keymaps" })
+keymap.set("n", "<C-S-p>", "<cmd>Telescope keymaps<cr>", { desc = "[Telescope] - show all Keymaps" })
 
 keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "[Telescope] - Find Files" })
 
@@ -128,6 +128,12 @@ keymap.set("n", "<leader>tgi", "<cmd>Telescope lsp_implementations<CR>", { desc 
 keymap.set("n", "<leader>tgd", "<cmd>Telescope lsp_definitions<CR>", { desc = "[Telescope] LSP Definitions" })
 keymap.set("n", "<leader>tT", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "[Telescope] LSP Type Definition" })
 
+keymap.set(
+    "n",
+    "<leader>tcmd",
+    "<cmd>Telescope commands<CR>",
+    { desc = "[Telescope] list all available vim commands(including plugins)" }
+)
 ---------------------------
 --
 
