@@ -51,6 +51,12 @@ gitsigns.setup({
         map("n", "<leader>hD", function()
             gs.diffthis("~")
         end, { desc = "[Gitsigns] diffthis(~)" })
+        map(
+            "n",
+            "<leader>hN",
+            ':lua package.loaded.gitsigns.diffthis("~")<left><left>',
+            { desc = "[Gitsigns] diff this(~<number here>), but enter how many commits away from head" }
+        )
         map("n", "<leader>td", gs.toggle_deleted, { desc = "[Gitsigns] toggle deleted" })
 
         -- Text object
