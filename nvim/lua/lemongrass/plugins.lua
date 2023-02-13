@@ -147,4 +147,12 @@ return require("packer").startup(function(use)
 
     -- profiling
     use({ "dstein64/vim-startuptime", lock = true })
+
+    use({
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            { "nvim-telescope/telescope.nvim" },
+        },
+        lock = true,
+    })
 end)

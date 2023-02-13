@@ -105,3 +105,34 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("neoclip")
+
+----------------------------------------
+--
+-- Telescope Plugins
+--
+--
+--
+
+local map = vim.keymap.set
+
+map(
+    "n",
+    "<leader>nc",
+    "<cmd>Telescope neoclip<CR>",
+    { desc = "[Telescope] open neoclip clipboard manager", silent = true, noremap = true }
+)
+
+map(
+    "n",
+    "<leader>tmcr",
+    "<cmd>lua require('telescope').extensions.macroscope.default()<CR>",
+    { desc = "[Telescope] open neoclip macroscope for macro history", silent = true, noremap = true }
+)
+
+map(
+    "n",
+    "<leader>tnctog",
+    "<cmd>lua require('neoclip').toggle()<CR>",
+    { desc = "[Telescope] (toggle) start or stop neoclip", silent = true, noremap = true }
+)
