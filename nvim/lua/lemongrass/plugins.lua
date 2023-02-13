@@ -122,6 +122,14 @@ return require("packer").startup(function(use)
         branch = "0.1.x",
         lock = true,
     })
+    use({
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            { "nvim-telescope/telescope.nvim" },
+        },
+        lock = true,
+    })
+    use("cljoly/telescope-repo.nvim")
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
 
@@ -147,12 +155,4 @@ return require("packer").startup(function(use)
 
     -- profiling
     use({ "dstein64/vim-startuptime", lock = true })
-
-    use({
-        "AckslD/nvim-neoclip.lua",
-        requires = {
-            { "nvim-telescope/telescope.nvim" },
-        },
-        lock = true,
-    })
 end)

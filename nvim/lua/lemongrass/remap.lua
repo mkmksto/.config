@@ -28,6 +28,7 @@ keymap.set("n", "<leader>bd", "<cmd>Bdelete!<CR>", { desc = "[B]uffer - [D]elete
 -- keymap.set("n", "<leader>bd", "<cmd>bdelete!<CR>")
 
 keymap.set("n", "<C-s>", "<cmd>write<CR>", { desc = "Write to file/save file", noremap = true, silent = true })
+keymap.set("i", "<C-s>", "", { noremap = true, silent = true })
 
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
@@ -112,11 +113,7 @@ keymap.set(
 -- Telescope with rg syntax
 local telescope_rg = require("telescope").extensions.live_grep_args
 keymap.set("n", "<leader>trg", function()
-    telescope_rg.live_grep_args({
-        search_dirs = { "~/Documents/Github-repos/" },
-        additional_args = { "*.md" },
-        -- default_text = "^ ~/Documents/Github-repos/*",
-    })
+    telescope_rg.live_grep_args()
 end, { desc = "[Telescope] live grep with args (defaults to cwd)" })
 
 -- keymap.set("n", "<leader>trg", "<cmd>Telescope live_grep_args<CR>")

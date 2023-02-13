@@ -61,9 +61,6 @@ local sorters = require("telescope.sorters")
 
 ------------------------
 --
---
---
---
 -- TELESCOPE SETUP
 --
 --
@@ -96,16 +93,24 @@ telescope.setup({
             ".svg",
         },
     },
-    -- -- doesn't work
-    -- extensions = {
-    --     live_grep_args = {
-    --         search_dirs = { "~/Documents/Github-repos/" },
-    --     },
-    -- },
+    -- doesn't work
+    extensions = {
+        live_grep_args = {
+            list = {
+                search_dirs = { "~/Documents/Github-repos" },
+            },
+        },
+        repo = {
+            list = {
+                search_dirs = { "~/Documents/Github-repos", "~/Documents/notes", "~/Documents/reference-repos" },
+            },
+        },
+    },
 })
 
 telescope.load_extension("fzf")
 telescope.load_extension("neoclip")
+telescope.load_extension("repo")
 
 ----------------------------------------
 --
@@ -116,6 +121,7 @@ telescope.load_extension("neoclip")
 
 local map = vim.keymap.set
 
+-- neoclip
 map(
     "n",
     "<leader>nc",
@@ -136,3 +142,6 @@ map(
     "<cmd>lua require('neoclip').toggle()<CR>",
     { desc = "[Telescope] (toggle) start or stop neoclip", silent = true, noremap = true }
 )
+
+-- telescope repo
+map("n", "<leader>trepo", "<cmd>Telescope repo<cr>", { desc = "[Telescope] browse your repositories" })
