@@ -61,11 +61,19 @@ keymap.set(
 --  Telescope
 local builtin = require("telescope.builtin")
 
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[Telescope] Grep inside files" }) -- find text throughout project
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[Telescope] Grep word under cursor" }) -- find string the cursor is on throught proj
+keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", { desc = "[Telescope] Recently opened files (old files)" })
+
+keymap.set("n", "<leader>/", function()
+    builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        winblend = 3,
+        previewer = false,
+        layout_config = { width = 0.6 },
+    }))
+end, { desc = "[Telescope] Search inside current buffer/file" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[Telescope] Grep inside files" })
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[Telescope] Grep word under cursor" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "[Telescope] - List Buffers" })
 
-keymap.set("n", "<leader>thlp", "<cmd>Telescope help_tags<cr>", { desc = "[Telescope] - show Help Documentation" })
 keymap.set("n", "<C-S-p>", "<cmd>Telescope keymaps<cr>", { desc = "[Telescope] - show all Keymaps" })
 
 keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "[Telescope] - Find Files" })
