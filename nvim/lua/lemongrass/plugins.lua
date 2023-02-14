@@ -128,8 +128,27 @@ return require("packer").startup(function(use)
         },
         lock = true,
     })
+
+    -- project and session management
     use({ "cljoly/telescope-repo.nvim", lock = true })
     use({ "gnikdroy/projections.nvim", lock = true })
+    use({
+        "rmagatti/auto-session",
+        config = function()
+            require("auto-session").setup({
+                log_level = "error",
+                cwd_change_handling = {
+                    post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
+                        require("lualine").refresh() -- refresh lualine so the new session name is displayed in the status bar
+                    end,
+                },
+                auto_session_enabled = true,
+                auto_save_enabled = true,
+                auto_restore_enabled = true,
+            })
+        end,
+        lock = true,
+    })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
 
