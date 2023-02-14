@@ -129,7 +129,8 @@ return require("packer").startup(function(use)
         },
         lock = true,
     })
-    use("cljoly/telescope-repo.nvim")
+    use({ "cljoly/telescope-repo.nvim", lock = true })
+    use({ "gnikdroy/projections.nvim", lock = true })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
 
