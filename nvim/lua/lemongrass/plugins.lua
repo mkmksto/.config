@@ -53,7 +53,6 @@ return require("packer").startup(function(use)
     use({ "hrsh7th/cmp-cmdline", lock = true })
     use({ "lukas-reineke/cmp-under-comparator", lock = true })
     use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
-    use({ "uga-rosa/cmp-dictionary", lock = true })
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", lock = true })
