@@ -180,9 +180,11 @@ return require("packer").startup(function(use)
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
-        run = function()
-            vim.fn["mkdp#util#install"]()
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
         end,
+        ft = { "markdown" },
         lock = true,
     })
     use({ "ekickx/clipboard-image.nvim", lock = true })
