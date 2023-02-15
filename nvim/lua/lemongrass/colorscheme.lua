@@ -1,4 +1,9 @@
-require("catppuccin").setup({
+local status, colorscheme = pcall(require, "catppuccin")
+if not status then 
+	return
+end
+
+colorscheme.setup({
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
     dim_inactive = {
         enabled = true,
