@@ -155,9 +155,6 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "swap lines" })
 keymap.set("x", "<leader>p", '"_dP', { desc = "Do not copy singly deleted characters to register" })
 keymap.set("n", "Q", "<nop>", { desc = "they said S-q is dangerous, dunno why" })
 
--- visual line comments
--- keymap.set({ "n", "o" }, "<C-/>", "<cmd>CommentToggle<CR>")
-
 -- docstrings
 keymap.set(
     { "n" },
@@ -179,6 +176,3 @@ keymap.set(
     "<cmd>lua require('toggle-checkbox').toggle()<CR>",
     { desc = "Toggle markdown checkboxes", noremap = true, silent = true }
 )
-
--- -- https://github.com/jghauser/follow-md-links.nvim
--- keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
