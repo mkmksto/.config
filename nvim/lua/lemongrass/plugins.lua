@@ -1,3 +1,10 @@
+local has = vim.fn.has
+local is_linux = has("unix")
+local is_wsl = (function()
+    local output = vim.fn.systemlist("uname -r")
+    return not not string.find(output[1] or "", "WSL")
+end)()
+
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -187,7 +194,14 @@ return require("packer").startup(function(use)
         ft = { "markdown" },
         lock = true,
     })
-    use({ "ekickx/clipboard-image.nvim", lock = true })
+
+    if is_wsl then
+        -- https://github.com/ekickx/clipboard-image.nvim/issues/34
+        use({ "ekickx/clipboard-image.nvim", lock = true, branch = "feat_WSL" })
+    elseif is_linux then
+        use({ "ekickx/clipboard-image.nvim", lock = true })
+    end
+
     use({ "ixru/nvim-markdown", lock = true }) -- some tools for markdown files
     use({ "jghauser/follow-md-links.nvim", lock = true })
 
