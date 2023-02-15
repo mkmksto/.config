@@ -41,13 +41,6 @@
 - also check folder structure against `projections-nvim.lua` and `telescope`.
 - install your `DAP` adapters and ensure the paths match the locations @ `debugging.lua`
 
-## Snapshots
-
-- to create snapshots, type `:PackerSnapshot <name of snap>`
-- `name of snap` can be an absolute path
-- for the sake of simplicity and git tracking, snapshots are saved under `./packer_snaps`, where `.` is the current directory (`~/.config/nvim/`)
-- check the [docs](https://github.com/wbthomason/packer.nvim#custom-initialization) to see how to config packer to use a custon snap directory
-
 ## Common issues
 
 - `;5u` appearing when i try to exit a terminal: this happens when you press `Ctrl+Enter` (sometimes i forget that i'm actually holding `ctrl` because of `ctrl+space` zsh autocomplete)
@@ -66,3 +59,14 @@ check that you have unzip installed (particularly for WSL)
 includes:
 
 - remaps for windows `terminal` to enable common keymaps. (like `s-space` and `c-s-p`)
+
+## Snapshots
+
+- to create snapshots, type `:PackerSnapshot <name of snap>`
+- `name of snap` can be an absolute path
+- for the sake of simplicity and git tracking, snapshots are saved under `./packer_snaps`, where `.` is the current directory (`~/.config/nvim/`)
+- check the [docs](https://github.com/wbthomason/packer.nvim#custom-initialization) to see how to config packer to use a custon snap directory
+
+### Important snapshots
+
+- `02-25-2023-23-58` `(11:58PM):` unlocked all packages then resynced packer, changed from `sumneko_lua` to `lua_ls`, added more `pcalls`, added more support for `WSL`, packer bootstrap.
