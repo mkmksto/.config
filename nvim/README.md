@@ -1,5 +1,10 @@
 # My Neovim Config
 
+## Installation
+
+- option 1 (best dev experience and easiest): just use the `deb` image and install using either `sudo apt install <deb file>` or `dpk install .... something`
+- option 2: download the `appimage` then copy the binary to one of the `$PATH`s
+
 ## Requirements
 
 - nvim >= `0.8.0`, some commands don't work for lower versions
