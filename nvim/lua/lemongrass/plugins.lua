@@ -145,6 +145,7 @@ return require("packer").startup(function(use)
         branch = "0.1.x",
         lock = true,
     })
+    use({ "nvim-telescope/telescope-live-grep-args.nvim", lock = true })
     use({
         "AckslD/nvim-neoclip.lua",
         requires = {
