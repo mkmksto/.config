@@ -59,9 +59,9 @@ keymap.set(
 
 ---------------------------
 --  Telescope
-local status, builtin = pcall(require,"telescope.builtin")
-if not status then 
-	return
+local status, builtin = pcall(require, "telescope.builtin")
+if not status then
+    return
 end
 
 keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", { desc = "[Telescope] Recently opened files (old files)" })
