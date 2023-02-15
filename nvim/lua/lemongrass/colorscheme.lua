@@ -1,6 +1,6 @@
 local status, colorscheme = pcall(require, "catppuccin")
-if not status then 
-	return
+if not status then
+    return
 end
 
 colorscheme.setup({
