@@ -4,27 +4,32 @@
 
 - option 1 (best dev experience and easiest): just use the `deb` image and install using either `sudo apt install <deb file>` or `dpk install .... something`
 - option 2: download the `appimage` then copy the binary to one of the `$PATH`s
+- periodically run `checkhealth`
 
 ## Requirements
 
-- nvim >= `0.8.0`, some commands don't work for lower versions
+- nvim >= `0.8.0`, some commands don't work for lower versions (latest: working with `0.8.3`)
 - git
 - Installing `black`, `isort` and `pylint` can sometimes result in `unable to create python3 venv environment`. Check this [stackoverflow](https://askubuntu.com/questions/958303/unable-to-create-virtual-environment-with-python-3-6) post
 
-- telescope
-  - ripgrep `rg`
+### OS-level dependencies
+
+- ripgrep `rg`
 - `fd` for finding files
-
-(Optional Requirements)
-
-- lazygit
-- nerd fonts
+- fzf
 
 (For a nice development environment)
 
+- lazygit
+- delta for lazygit and git diff viewers
+- nerd fonts
 - `nvm` for node version management
 - `virtualenv`
 - `pnpm`
+- `bat` (telescope file previews)
+- `glow` (md file previews)
+- install `locate`
+- `fd`
 
 ## Configuration (i.e. things you might need to do manually after installing)
 
@@ -32,6 +37,9 @@
 - for `DAP`, you might have to manually type the location of some of the adapters, e.g. for python
   - see `dap.adapters.python` under `debugging.lua`
 - you might need to configure a custom location if you'd want to use a dictionary for `MD` files
+- make sure your folder structure matches the repos the plugins will be setting up (e.g. telescope repo, telescope searching for notes, etc.)
+- also check folder structure against `projections-nvim.lua` and `telescope`.
+- install your `DAP` adapters and ensure the paths match the locations @ `debugging.lua`
 
 ## Snapshots
 
@@ -44,5 +52,17 @@
 
 - `;5u` appearing when i try to exit a terminal: this happens when you press `Ctrl+Enter` (sometimes i forget that i'm actually holding `ctrl` because of `ctrl+space` zsh autocomplete)
 - `pylint` false positives about import error: probably has to do with `NULL LS` being confused about which `pylint` installation to use, when pylint is installed from mason, it attempts to use that, and as a result, it may try to resolve import dependencies from where the global `mason` pylint package is installed.
+
   - `FIX`: under `mason.lua`, comment out the part where `pylint` is under `null_ls`'s `ensure_installed` packages
   - then simply install pylint inside the venv of your project (seems to work lol idk why)
+
+### some mason/null ls packages failing to install
+
+check that you have unzip installed (particularly for WSL)
+`spawn: unzip failed with exit code..... unzip not executable`
+
+### Windows/WSL (check notes md files)
+
+includes:
+
+- remaps for windows `terminal` to enable common keymaps. (like `s-space` and `c-s-p`)
