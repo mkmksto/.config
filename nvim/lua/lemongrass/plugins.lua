@@ -58,7 +58,7 @@ return require("packer").startup(function(use)
     use({ "windwp/nvim-spectre", lock = true, cmd = "Spectre", config = [[require('lemongrass.lazyload.spectre')]] })
 
     -- comments and docstrings
-    use({ "numToStr/Comment.nvim", lock = true })
+    use({ "numToStr/Comment.nvim", lock = true, event = "BufRead", config = [[require('lemongrass.lazyload.comment')]] })
     use({
         "kkoomen/vim-doge",
         run = ":call doge#install()",
@@ -141,7 +141,12 @@ return require("packer").startup(function(use)
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
-    use({ "windwp/nvim-autopairs", lock = true, after = "nvim-treesitter" })
+    use({
+        "windwp/nvim-autopairs",
+        lock = true,
+        event = "BufRead",
+        config = [[require('lemongrass.lazyload.autopairs')]],
+    })
     use({
         "windwp/nvim-ts-autotag",
         lock = true,
