@@ -91,11 +91,11 @@ return require("packer").startup(function(use)
             require("lemongrass.lazyload.nvimcmp")
         end,
     })
-    use({ "hrsh7th/cmp-buffer", lock = true, event = "InsertEnter" })
-    use({ "hrsh7th/cmp-path", lock = true, event = "InsertEnter" })
+    use({ "hrsh7th/cmp-buffer", lock = true })
+    use({ "hrsh7th/cmp-path", lock = true })
     use({ "hrsh7th/cmp-cmdline", lock = true, event = "CmdlineChanged" })
     use({ "lukas-reineke/cmp-under-comparator", lock = true })
-    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true, event = "InsertEnter" })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", lock = true })
@@ -218,7 +218,6 @@ return require("packer").startup(function(use)
         "gnikdroy/projections.nvim",
         lock = true,
         after = "telescope.nvim",
-        keys = "<leader>pro",
         config = [[require('lemongrass.lazyload.projections-nvim')]],
     })
     use({
@@ -281,5 +280,5 @@ return require("packer").startup(function(use)
     use({ "jghauser/follow-md-links.nvim", lock = true, ft = { "markdown" } })
 
     -- profiling
-    use({ "dstein64/vim-startuptime", lock = true })
+    use({ "dstein64/vim-startuptime", lock = true, cmd = "StartupTime" })
 end)
