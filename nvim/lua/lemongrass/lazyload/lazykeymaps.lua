@@ -1,8 +1,6 @@
 -- Lazyloading instructions and caveats
 --
 --
--- Toggleterm:
--- just type :Toggleterm first to get the shortcuts to the other toggleterm commands
 --
 
 local keymap = vim.keymap
