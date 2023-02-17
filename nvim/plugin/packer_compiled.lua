@@ -390,6 +390,7 @@ _G.packer_plugins = {
   ["toggleterm.nvim"] = {
     commands = { "ToggleTerm", "ToggleTermToggleAll" },
     config = { "\27LJ\2\n>\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0#lemongrass.lazyload.toggleterm\frequire\0" },
+    keys = { { "", "<leader>tpy" } },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -530,13 +531,14 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> <leader>re <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>re", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>pro <cmd>lua require("packer.load")({'projections.nvim'}, { keys = "<lt>leader>pro", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <leader>tpy <cmd>lua require("packer.load")({'toggleterm.nvim'}, { keys = "<lt>leader>tpy", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>rbf <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>rbf", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <leader>re <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>re", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>rb <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>rb", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>rf <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>rf", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> <leader>rv <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>rv", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>ri <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>ri", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <leader>rv <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>rv", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -548,8 +550,8 @@ time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'zen-mode.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-buffer', 'cmp-nvim-lsp-signature-help', 'cmp-path', 'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

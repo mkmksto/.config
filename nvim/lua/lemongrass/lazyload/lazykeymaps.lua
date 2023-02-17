@@ -86,3 +86,40 @@ vim.api.nvim_set_keymap(
     [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
     { noremap = true, silent = true, expr = false, desc = "[Refactoring] Inline variable" }
 )
+
+---------------------------------------------
+-- Toggleterm
+-- these are dummy keymaps just so that they show up when i open telescope's keymaps
+-- the real keymaps are inside the toggleterm file
+--
+--
+--
+--
+--
+
+vim.keymap.set(
+    { "n", "t" },
+    "<C-`>",
+    "<Esc><C-\\><C-n><cmd>ToggleTermToggleAll<CR>",
+    { desc = "[Toggleterm] Toggle all terminals" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>tpy",
+    ":lua _PYTHON_TOGGLE()<CR>",
+    { desc = "[Toggleterm] Toggle Python floating terminal" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>tjs",
+    ":lua _NODE_TOGGLE()<CR>",
+    { desc = "[Toggleterm] Toggle NODE JS floating terminal" }
+)
+vim.keymap.set("n", "<leader>fl", ":lua _FLOATING_TOGGLE()<CR>", { desc = "[Toggleterm] Toggle floating terminal" })
+vim.keymap.set("n", "<leader>htop", ":lua _HTOP_TOGGLE()<CR>", { desc = "[Toggleterm] Toggle floating HTOP terminal" })
+vim.keymap.set(
+    "n",
+    "<leader>lz",
+    ":lua _LAZYGIT_TOGGLE()<CR>",
+    { desc = "[Toggleterm] Toggle floating Lazygit terminal" }
+)

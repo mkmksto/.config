@@ -157,6 +157,9 @@ return require("packer").startup(function(use)
         end,
         lock = true,
         cmd = { "ToggleTerm", "ToggleTermToggleAll" },
+        keys = {
+            "<leader>tpy",
+        },
     })
 
     --scrollbar and other UI elements
