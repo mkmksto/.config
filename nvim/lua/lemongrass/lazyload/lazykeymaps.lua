@@ -17,3 +17,10 @@ keymap.set(
 local map = vim.api.nvim_set_keymap
 map("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "[DAP] continue" })
 map("n", "<F3>", "<cmd>DapToggleBreakpoint<CR>", { desc = "[DAP] toggle breakpoint" })
+
+keymap.set(
+    "n",
+    "leaderss",
+    "<cmd>PasteImg<CR>",
+    { desc = "[Clipboard Image] Paste image from clipboard into markdown file", noremap = true, silent = true }
+)

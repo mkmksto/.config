@@ -236,9 +236,20 @@ return require("packer").startup(function(use)
 
     if is_wsl then
         -- https://github.com/ekickx/clipboard-image.nvim/issues/34
-        use({ "ekickx/clipboard-image.nvim", lock = true, branch = "feat_WSL", ft = { "markdown" } })
+        use({
+            "ekickx/clipboard-image.nvim",
+            lock = true,
+            branch = "feat_WSL",
+            ft = { "markdown" },
+            config = [[require('lemongrass.lazyload.clip-image')]],
+        })
     elseif is_linux then
-        use({ "ekickx/clipboard-image.nvim", lock = true, ft = { "markdown" } })
+        use({
+            "ekickx/clipboard-image.nvim",
+            lock = true,
+            ft = { "markdown" },
+            config = [[require('lemongrass.lazyload.clip-image')]],
+        })
     end
 
     use({ "ixru/nvim-markdown", lock = true, ft = { "markdown" } }) -- some tools for markdown files

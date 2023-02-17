@@ -106,6 +106,7 @@ _G.packer_plugins = {
     url = "https://github.com/uga-rosa/ccc.nvim"
   },
   ["clipboard-image.nvim"] = {
+    config = { "require('lemongrass.lazyload.clip-image')" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -528,9 +529,9 @@ time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'zen-mode.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-path', 'nvim-ts-autotag', 'cmp-nvim-lsp-signature-help', 'cmp-buffer'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-path', 'nvim-ts-autotag', 'cmp-nvim-lsp-signature-help', 'cmp-buffer'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'zen-mode.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
