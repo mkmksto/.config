@@ -190,9 +190,6 @@ return require("packer").startup(function(use)
     })
     use({
         "AckslD/nvim-neoclip.lua",
-        requires = {
-            { "nvim-telescope/telescope.nvim" },
-        },
         lock = true,
         after = "telescope.nvim",
     })
