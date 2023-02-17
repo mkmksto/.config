@@ -75,13 +75,19 @@ return require("packer").startup(function(use)
     use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons", lock = true })
     use({ "moll/vim-bbye", lock = true })
 
-    -- aucomplete
-    use({ "hrsh7th/nvim-cmp", lock = true })
-    use({ "hrsh7th/cmp-buffer", lock = true }) -- recommend text from current buffer
-    use({ "hrsh7th/cmp-path", lock = true }) -- recommend paths
+    -- aucomplete / cmp / autocomplettion
+    use({
+        "hrsh7th/nvim-cmp",
+        lock = true,
+        config = function()
+            require("lemongrass.lazyload.nvimcmp")
+        end,
+    })
+    use({ "hrsh7th/cmp-buffer", lock = true, event = "InsertEnter" })
+    use({ "hrsh7th/cmp-path", lock = true, event = "InsertEnter" })
     use({ "hrsh7th/cmp-cmdline", lock = true })
     use({ "lukas-reineke/cmp-under-comparator", lock = true })
-    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true, event = "InsertEnter" })
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", lock = true })
@@ -124,7 +130,7 @@ return require("packer").startup(function(use)
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
-    use({ "windwp/nvim-autopairs", lock = true, event = "InsertEnter" })
+    use({ "windwp/nvim-autopairs", lock = true })
     use({
         "windwp/nvim-ts-autotag",
         lock = true,
