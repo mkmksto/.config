@@ -121,12 +121,6 @@ keymap.set(
     { desc = "[Telescope] Search through telescope's help manual " }
 )
 
--- Telescope with rg syntax
-local telescope_rg = require("telescope").extensions.live_grep_args
-keymap.set("n", "<leader>trg", function()
-    telescope_rg.live_grep_args()
-end, { desc = "[Telescope] live grep with args (defaults to cwd)" })
-
 -- keymap.set("n", "<leader>trg", "<cmd>Telescope live_grep_args<CR>")
 -- keymap.set("n", "<leader>trg", '<cmd>Telescope live_grep_args search_dirs={"~/Documents/Github-repos/"}<CR>')
 
@@ -176,3 +170,8 @@ keymap.set(
     "<cmd>lua require('toggle-checkbox').toggle()<CR>",
     { desc = "Toggle markdown checkboxes", noremap = true, silent = true }
 )
+
+-- DAP Debugging (for lazy loading)
+local map = vim.api.nvim_set_keymap
+map("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "[DAP] continue" })
+map("n", "<F3>", "<cmd>DapToggleBreakpoint<CR>", { desc = "[DAP] toggle breakpoint" })

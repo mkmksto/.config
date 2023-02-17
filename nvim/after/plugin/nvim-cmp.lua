@@ -38,7 +38,17 @@ local function deprioritize_snippet(entry1, entry2)
     end
 end
 
+local function deprioritize_bufftext(entry1, entry2)
+    if entry1:get_kind() == cmp_types_config.lsp.CompletionItemKind.Text then
+        return false
+    end
+    if entry2:get_kind() == cmp_types_config.lsp.CompletionItemKind.Text then
+        return true
+    end
+end
+
 -- -- https://www.youtube.com/watch?v=z5mqa4ELjhw&list=PLOe6AggsTaVuIXZU4gxWJpIQNHMrDknfN&index=24
+-- -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#completionItemKind
 -- -- local kind_mapper = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 }
 -- local kind_mapper = cmp_types_config.lsp.CompletionItemKind
 --
@@ -83,24 +93,25 @@ cmp.setup({
     -- sources for autocompletion
     sources = cmp.config.sources({
         { name = "nvim_lsp", max_item_count = 11, priority = 10 }, -- lsp as source for autocompletion
-        { name = "nvim_lsp_signature_help", priority = 9 }, -- lsp as source for autocompletion
-        { name = "buffer", max_item_count = 5, priority = 8 }, -- text within current buffer
+        { name = "nvim_lsp_signature_help", priority = 9 }, -- displays args for current function
         { name = "path", max_item_count = 5, priority = 7 }, -- file system paths
         { name = "luasnip", max_item_count = 4, priority = 5, keyword_length = 3 }, -- snippets
+        { name = "buffer", max_item_count = 5, priority = 4, keyword_length = 4 }, -- text within current buffer
         -- { name = "dictionary", max_item_count = 8, priority = 4, keyword_length = 2 }, -- english dictionary
     }),
     -- https://github.com/hrsh7th/nvim-cmp/issues/183
     -- https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
     -- (Lower Emmet Snippets) https://www.reddit.com/r/neovim/comments/woih9n/how_to_set_lsp_autocomplete_priority/
     sorting = {
-        priority_weight = 1.0,
+        priority_weight = 2.0,
         -- https://www.youtube.com/watch?v=p7TIag1GRDE&list=PLOe6AggsTaVuIXZU4gxWJpIQNHMrDknfN&index=23
         comparators = {
             deprioritize_snippet,
-            require("cmp-under-comparator").under,
             cmp.config.compare.exact,
-            cmp.config.compare.length, -- prefer shorter over longer matches
+            deprioritize_bufftext,
+            require("cmp-under-comparator").under,
             cmp.config.compare.recently_used,
+            cmp.config.compare.length, -- prefer shorter over longer matches
             cmp.config.compare.locality,
             -- function(entry1, entry2)
             --     local kind1 = kind_score[kind_mapper[entry1:get_kind()]] or 50

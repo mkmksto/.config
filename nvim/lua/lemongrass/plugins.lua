@@ -33,7 +33,7 @@ packer.init({
 
 return require("packer").startup(function(use)
     -- main
-    use({ "wbthomason/packer.nvim", lock = true })
+    use({ "wbthomason/packer.nvim" })
     use({ "nvim-lua/plenary.nvim", lock = true })
 
     -- color schemes
@@ -42,7 +42,12 @@ return require("packer").startup(function(use)
     use({ "catppuccin/nvim", as = "catppuccin", lock = true })
 
     -- refactoring
-    use({ "ThePrimeagen/refactoring.nvim", lock = true })
+    use({
+        "ThePrimeagen/refactoring.nvim",
+        lock = true,
+        opt = true,
+        config = [[require('lemongrass.lazyload.refactoring')]],
+    })
     use({ "windwp/nvim-spectre", lock = true })
 
     -- comments and docstrings
@@ -103,14 +108,21 @@ return require("packer").startup(function(use)
         "mfussenegger/nvim-dap",
         lock = true,
         config = function()
-            require("dap.ext.vscode").load_launchjs()
+            require("lemongrass.lazyload.debugging")
         end,
+        cmd = { "DapContinue", "DapToggleBreakpoint" },
     })
     use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, lock = true })
 
     -- autoclosing
     use({ "windwp/nvim-autopairs", lock = true })
-    use({ "windwp/nvim-ts-autotag", lock = true })
+    -- examples of lazyloading: https://github.com/jdhao/nvim-config/blob/master/lua/plugins.lua#L36
+    use({
+        "windwp/nvim-ts-autotag",
+        lock = true,
+        after = "nvim-treesitter",
+        config = [[require('lemongrass.lazyload.treesitter')]],
+    })
 
     -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
     use({ "lewis6991/gitsigns.nvim", lock = true })
@@ -120,7 +132,7 @@ return require("packer").startup(function(use)
         "akinsho/toggleterm.nvim",
         tag = "*",
         config = function()
-            require("toggleterm").setup()
+            require("lemongrass.lazyload.toggleterm")
         end,
         lock = true,
     })
@@ -132,30 +144,36 @@ return require("packer").startup(function(use)
     use({ "folke/zen-mode.nvim", lock = true })
 
     -- Telescope
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", lock = true })
     use({
         "nvim-telescope/telescope.nvim",
-        -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim#installation
-        requires = {
-            { "nvim-telescope/telescope-live-grep-args.nvim" },
-        },
-        config = function()
-            require("telescope").load_extension("live_grep_args")
-        end,
         branch = "0.1.x",
         lock = true,
     })
-    use({ "nvim-telescope/telescope-live-grep-args.nvim", lock = true })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", lock = true, after = "telescope.nvim" })
+    use({
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        lock = true,
+        after = "telescope.nvim",
+        config = function()
+            require("telescope").load_extension("live_grep_args")
+            -- Telescope with rg syntax
+            local telescope_rg = require("telescope").extensions.live_grep_args
+            vim.keymap.set("n", "<leader>trg", function()
+                telescope_rg.live_grep_args()
+            end, { desc = "[Telescope] live grep with args (defaults to cwd)" })
+        end,
+    })
     use({
         "AckslD/nvim-neoclip.lua",
         requires = {
             { "nvim-telescope/telescope.nvim" },
         },
         lock = true,
+        after = "telescope.nvim",
     })
 
     -- project and session management
-    use({ "cljoly/telescope-repo.nvim", lock = true })
+    use({ "cljoly/telescope-repo.nvim", lock = true, after = "telescope.nvim" })
     use({ "gnikdroy/projections.nvim", lock = true })
     use({
         "rmagatti/auto-session",
@@ -175,7 +193,7 @@ return require("packer").startup(function(use)
         lock = true,
     })
 
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true })
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true, event = "BufWinEnter" })
 
     -- colors
     use({ "uga-rosa/ccc.nvim", branch = "0.7.2", lock = true })
