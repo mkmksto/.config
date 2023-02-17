@@ -114,14 +114,22 @@ return require("packer").startup(function(use)
     })
     use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }, lock = true })
 
-    -- autoclosing
-    use({ "windwp/nvim-autopairs", lock = true })
+    -- Treesitter
     -- examples of lazyloading: https://github.com/jdhao/nvim-config/blob/master/lua/plugins.lua#L36
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        lock = true,
+        event = "BufWinEnter",
+        config = [[require('lemongrass.lazyload.treesitter')]],
+    })
+    -- autoclosing
+    use({ "windwp/nvim-autopairs", lock = true, event = "InsertEnter" })
     use({
         "windwp/nvim-ts-autotag",
         lock = true,
         after = "nvim-treesitter",
-        config = [[require('lemongrass.lazyload.treesitter')]],
+        event = "InsertEnter",
     })
 
     -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
@@ -192,8 +200,6 @@ return require("packer").startup(function(use)
         end,
         lock = true,
     })
-
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", lock = true, event = "BufWinEnter" })
 
     -- colors
     use({ "uga-rosa/ccc.nvim", branch = "0.7.2", lock = true })

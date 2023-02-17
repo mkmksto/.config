@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["auto-session"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\frefresh\flualine\frequireÎ\1\1\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\24cwd_change_handling\26post_cwd_changed_hook\1\0\0\0\1\0\4\14log_level\nerror\25auto_restore_enabled\2\22auto_save_enabled\2\25auto_session_enabled\2\nsetup\17auto-session\frequire\0" },
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\frefresh\flualine\frequireÎ\1\1\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\24cwd_change_handling\26post_cwd_changed_hook\1\0\0\0\1\0\4\25auto_restore_enabled\2\22auto_save_enabled\2\25auto_session_enabled\2\14log_level\nerror\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
@@ -208,8 +208,10 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
@@ -265,6 +267,7 @@ _G.packer_plugins = {
   },
   ["nvim-treesitter"] = {
     after = { "nvim-ts-autotag" },
+    config = { "require('lemongrass.lazyload.treesitter')" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -272,12 +275,12 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
-    config = { "require('lemongrass.lazyload.treesitter')" },
     load_after = {
       ["nvim-treesitter"] = true
     },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
@@ -408,36 +411,29 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\frefresh\flualine\frequireÎ\1\1\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\24cwd_change_handling\26post_cwd_changed_hook\1\0\0\0\1\0\4\14log_level\nerror\25auto_restore_enabled\2\22auto_save_enabled\2\25auto_session_enabled\2\nsetup\17auto-session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0#lemongrass.lazyload.toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\frefresh\flualine\frequireÎ\1\1\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\24cwd_change_handling\26post_cwd_changed_hook\1\0\0\0\1\0\4\25auto_restore_enabled\2\22auto_save_enabled\2\25auto_session_enabled\2\14log_level\nerror\nsetup\17auto-session\frequire\0", "config", "auto-session")
+time([[Config for auto-session]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd telescope.nvim ]]
-vim.cmd [[ packadd telescope-fzf-native.nvim ]]
-vim.cmd [[ packadd nvim-neoclip.lua ]]
-vim.cmd [[ packadd telescope-repo.nvim ]]
 vim.cmd [[ packadd telescope-live-grep-args.nvim ]]
 
 -- Config for: telescope-live-grep-args.nvim
 try_loadstring("\27LJ\2\n(\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\19live_grep_argsî\1\1\0\a\0\f\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0009\0\3\0006\1\5\0009\1\6\0019\1\a\1'\3\b\0'\4\t\0003\5\n\0005\6\v\0B\1\5\0012\0\0€K\0\1\0\1\0\1\tdesc6[Telescope] live grep with args (defaults to cwd)\0\16<leader>trg\6n\bset\vkeymap\bvim\15extensions\19live_grep_args\19load_extension\14telescope\frequire\0", "config", "telescope-live-grep-args.nvim")
 
+vim.cmd [[ packadd nvim-neoclip.lua ]]
+vim.cmd [[ packadd telescope-fzf-native.nvim ]]
+vim.cmd [[ packadd telescope-repo.nvim ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'VimBeGood', function(cmdargs)
-          require('packer.load')({'vim-be-good'}, { cmd = 'VimBeGood', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-be-good'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('VimBeGood ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'DogeGenerate', function(cmdargs)
           require('packer.load')({'vim-doge'}, { cmd = 'DogeGenerate', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -452,12 +448,12 @@ pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdarg
           require('packer.load')({'vim-doge'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('DogeCreateDocStandard ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'DapContinue', function(cmdargs)
-          require('packer.load')({'nvim-dap'}, { cmd = 'DapContinue', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'VimBeGood', function(cmdargs)
+          require('packer.load')({'vim-be-good'}, { cmd = 'VimBeGood', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('DapContinue ', 'cmdline')
+          require('packer.load')({'vim-be-good'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('VimBeGood ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'DapToggleBreakpoint', function(cmdargs)
           require('packer.load')({'nvim-dap'}, { cmd = 'DapToggleBreakpoint', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -466,16 +462,24 @@ pcall(vim.api.nvim_create_user_command, 'DapToggleBreakpoint', function(cmdargs)
           require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('DapToggleBreakpoint ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'DapContinue', function(cmdargs)
+          require('packer.load')({'nvim-dap'}, { cmd = 'DapContinue', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DapContinue ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'toggle-checkbox.nvim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'toggle-checkbox.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-ts-autotag', 'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
