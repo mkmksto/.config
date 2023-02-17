@@ -37,8 +37,8 @@ return require("packer").startup(function(use)
     use({ "nvim-lua/plenary.nvim", lock = true })
 
     -- color schemes
-    use({ "nyoom-engineering/oxocarbon.nvim", lock = true })
-    use({ "olimorris/onedarkpro.nvim", lock = true })
+    use({ "nyoom-engineering/oxocarbon.nvim", lock = true, opt = true })
+    use({ "olimorris/onedarkpro.nvim", lock = true, opt = true })
     use({ "catppuccin/nvim", as = "catppuccin", lock = true })
 
     -- refactoring
