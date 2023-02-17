@@ -135,3 +135,28 @@ keymap.set(
     "<cmd>DogeGenerate jsdoc<CR>",
     { desc = "[Doge] Generate JSdoc docstrings", noremap = true, silent = true }
 )
+
+-- neoclip
+keymap.set(
+    "n",
+    "<leader>nc",
+    "<cmd>Telescope neoclip<CR>",
+    { desc = "[Telescope] open neoclip clipboard manager", silent = true, noremap = true }
+)
+
+keymap.set(
+    "n",
+    "<leader>tmcr",
+    "<cmd>lua require('telescope').extensions.macroscope.default()<CR>",
+    { desc = "[Telescope] open neoclip macroscope for macro history", silent = true, noremap = true }
+)
+
+keymap.set(
+    "n",
+    "<leader>tnctog",
+    "<cmd>lua require('neoclip').toggle()<CR>",
+    { desc = "[Telescope] (toggle) start or stop neoclip", silent = true, noremap = true }
+)
+
+-- telescope repo
+keymap.set("n", "<leader>trepo", "<cmd>Telescope repo<cr>", { desc = "[Telescope] browse your repositories" })

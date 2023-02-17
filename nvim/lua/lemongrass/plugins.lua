@@ -209,6 +209,7 @@ return require("packer").startup(function(use)
         "AckslD/nvim-neoclip.lua",
         lock = true,
         after = "telescope.nvim",
+        config = [[require('lemongrass.lazyload.neoclip')]],
     })
 
     -- project and session management

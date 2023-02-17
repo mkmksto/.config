@@ -1,3 +1,10 @@
+local telescope_setup, telescope = pcall(require, "telescope")
+if not telescope_setup then
+    return
+end
+
+telescope.load_extension("neoclip")
+
 require("neoclip").setup({
     default_register = { "+", '"', "*" },
     on_select = {
