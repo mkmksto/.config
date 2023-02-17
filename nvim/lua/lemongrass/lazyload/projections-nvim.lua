@@ -14,6 +14,3 @@ projections.setup({
 })
 
 require("telescope").load_extension("projections")
-
-local map = vim.keymap.set
-map("n", "<leader>pro", "<cmd>Telescope projections<CR>", { desc = "[Telescope] Projections project manager" })

@@ -196,7 +196,13 @@ return require("packer").startup(function(use)
 
     -- project and session management
     use({ "cljoly/telescope-repo.nvim", lock = true, after = "telescope.nvim" })
-    use({ "gnikdroy/projections.nvim", lock = true })
+    use({
+        "gnikdroy/projections.nvim",
+        lock = true,
+        after = "telescope.nvim",
+        keys = "<leader>pro",
+        config = [[require('lemongrass.lazyload.projections-nvim')]],
+    })
     use({
         "rmagatti/auto-session",
         config = function()

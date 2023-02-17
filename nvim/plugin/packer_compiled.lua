@@ -335,8 +335,13 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["projections.nvim"] = {
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/projections.nvim",
+    config = { "require('lemongrass.lazyload.projections-nvim')" },
+    keys = { { "", "<leader>pro" } },
+    load_after = {},
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/projections.nvim",
     url = "https://github.com/gnikdroy/projections.nvim"
   },
   ["refactoring.nvim"] = {
@@ -521,6 +526,11 @@ pcall(vim.api.nvim_create_user_command, 'ToggleTermToggleAll', function(cmdargs)
       end})
 time([[Defining lazy-load commands]], false)
 
+-- Keymap lazy-loads
+time([[Defining lazy-load keymaps]], true)
+vim.cmd [[noremap <silent> <leader>pro <cmd>lua require("packer.load")({'projections.nvim'}, { keys = "<lt>leader>pro", prefix = "" }, _G.packer_plugins)<cr>]]
+time([[Defining lazy-load keymaps]], false)
+
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
@@ -529,9 +539,9 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'follow-md-lin
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-buffer', 'cmp-nvim-lsp-signature-help', 'cmp-path', 'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-buffer', 'cmp-nvim-lsp-signature-help', 'cmp-path', 'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'zen-mode.nvim', 'indent-blankline.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

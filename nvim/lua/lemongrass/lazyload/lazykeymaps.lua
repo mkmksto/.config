@@ -24,3 +24,5 @@ keymap.set(
     "<cmd>PasteImg<CR>",
     { desc = "[Clipboard Image] Paste image from clipboard into markdown file", noremap = true, silent = true }
 )
+
+keymap.set("n", "<leader>pro", "<cmd>Telescope projections<CR>", { desc = "[Telescope] Projections project manager" })
