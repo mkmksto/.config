@@ -1,4 +1,0 @@
--- local dashboard_setup, db = pcall(require, "nvim_comment")
--- if not dashboard_setup then
---     return
--- end
