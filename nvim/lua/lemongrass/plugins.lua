@@ -159,6 +159,10 @@ return require("packer").startup(function(use)
         cmd = { "ToggleTerm", "ToggleTermToggleAll" },
         keys = {
             "<leader>tpy",
+            "<leader>lz",
+            "<leader>fl",
+            "<C-`>",
+            "<C-\\>",
         },
     })
 
