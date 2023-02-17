@@ -48,7 +48,7 @@ return require("packer").startup(function(use)
         opt = true,
         config = [[require('lemongrass.lazyload.refactoring')]],
     })
-    use({ "windwp/nvim-spectre", lock = true })
+    use({ "windwp/nvim-spectre", lock = true, cmd = "Spectre", config = [[require('lemongrass.lazyload.spectre')]] })
 
     -- comments and docstrings
     use({ "numToStr/Comment.nvim", lock = true })
@@ -149,6 +149,7 @@ return require("packer").startup(function(use)
             require("lemongrass.lazyload.toggleterm")
         end,
         lock = true,
+        cmd = { "ToggleTerm", "ToggleTermToggleAll" },
     })
 
     --scrollbar and other UI elements

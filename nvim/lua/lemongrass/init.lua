@@ -7,6 +7,7 @@ require("lemongrass.lsp.lspsaga")
 require("lemongrass.lsp.lspconfig")
 require("lemongrass.lsp.null-ls")
 require("lemongrass.re_command")
+require("lemongrass.lazyload.lazykeymaps")
 
 local has = vim.fn.has
 local is_linux = has("unix")

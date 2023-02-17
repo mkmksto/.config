@@ -267,8 +267,12 @@ _G.packer_plugins = {
     url = "https://github.com/dstein64/nvim-scrollview"
   },
   ["nvim-spectre"] = {
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    commands = { "Spectre" },
+    config = { "require('lemongrass.lazyload.spectre')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/nvim-spectre",
     url = "https://github.com/windwp/nvim-spectre"
   },
   ["nvim-tree.lua"] = {
@@ -369,9 +373,12 @@ _G.packer_plugins = {
     url = "https://github.com/opdavies/toggle-checkbox.nvim"
   },
   ["toggleterm.nvim"] = {
+    commands = { "ToggleTerm", "ToggleTermToggleAll" },
     config = { "\27LJ\2\n>\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0#lemongrass.lazyload.toggleterm\frequire\0" },
-    loaded = true,
-    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lemongrass/.local/share/nvim/site/pack/packer/opt/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["typescript.nvim"] = {
@@ -425,10 +432,6 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n>\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0#lemongrass.lazyload.toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 lemongrass.lazyload.nvimcmp\frequire\0", "config", "nvim-cmp")
@@ -466,6 +469,20 @@ pcall(vim.api.nvim_create_user_command, 'DapToggleBreakpoint', function(cmdargs)
           require('packer.load')({'nvim-dap'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('DapToggleBreakpoint ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'Spectre', function(cmdargs)
+          require('packer.load')({'nvim-spectre'}, { cmd = 'Spectre', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-spectre'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Spectre ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'VimBeGood', function(cmdargs)
+          require('packer.load')({'vim-be-good'}, { cmd = 'VimBeGood', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-be-good'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('VimBeGood ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'DogeGenerate', function(cmdargs)
           require('packer.load')({'vim-doge'}, { cmd = 'DogeGenerate', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -480,12 +497,19 @@ pcall(vim.api.nvim_create_user_command, 'DogeCreateDocStandard', function(cmdarg
           require('packer.load')({'vim-doge'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('DogeCreateDocStandard ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'VimBeGood', function(cmdargs)
-          require('packer.load')({'vim-be-good'}, { cmd = 'VimBeGood', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'ToggleTerm', function(cmdargs)
+          require('packer.load')({'toggleterm.nvim'}, { cmd = 'ToggleTerm', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-be-good'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('VimBeGood ', 'cmdline')
+          require('packer.load')({'toggleterm.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('ToggleTerm ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'ToggleTermToggleAll', function(cmdargs)
+          require('packer.load')({'toggleterm.nvim'}, { cmd = 'ToggleTermToggleAll', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'toggleterm.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('ToggleTermToggleAll ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
@@ -497,10 +521,10 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'toggle-checkb
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-buffer', 'cmp-path', 'nvim-ts-autotag', 'cmp-nvim-lsp-signature-help'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-buffer', 'cmp-path', 'nvim-ts-autotag', 'cmp-nvim-lsp-signature-help'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'zen-mode.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-doge'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

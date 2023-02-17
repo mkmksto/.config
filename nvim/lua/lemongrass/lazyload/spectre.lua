@@ -7,18 +7,8 @@ spectre.setup()
 
 local keymap = vim.keymap
 keymap.set(
-    "n",
-    "<leader>S",
-    "<cmd>lua require('spectre').open()<CR>",
-    { desc = "[Spectre] Open Spectre search and replace", noremap = true, silent = true }
-)
-keymap.set(
     { "n" },
     "<leader>sw",
     "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
     { desc = "[Spectre] Search and replace using word under cursor", noremap = true, silent = true }
 )
-
--- testing spectre xixihahx
--- hahahahx
--- haha ha haha
