@@ -170,8 +170,3 @@ keymap.set(
     "<cmd>lua require('toggle-checkbox').toggle()<CR>",
     { desc = "Toggle markdown checkboxes", noremap = true, silent = true }
 )
-
--- DAP Debugging (for lazy loading)
-local map = vim.api.nvim_set_keymap
-map("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "[DAP] continue" })
-map("n", "<F3>", "<cmd>DapToggleBreakpoint<CR>", { desc = "[DAP] toggle breakpoint" })

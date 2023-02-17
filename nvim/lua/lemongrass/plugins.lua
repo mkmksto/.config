@@ -239,13 +239,13 @@ return require("packer").startup(function(use)
 
     if is_wsl then
         -- https://github.com/ekickx/clipboard-image.nvim/issues/34
-        use({ "ekickx/clipboard-image.nvim", lock = true, branch = "feat_WSL" })
+        use({ "ekickx/clipboard-image.nvim", lock = true, branch = "feat_WSL", ft = { "markdown" } })
     elseif is_linux then
-        use({ "ekickx/clipboard-image.nvim", lock = true })
+        use({ "ekickx/clipboard-image.nvim", lock = true, ft = { "markdown" } })
     end
 
-    use({ "ixru/nvim-markdown", lock = true }) -- some tools for markdown files
-    use({ "jghauser/follow-md-links.nvim", lock = true })
+    use({ "ixru/nvim-markdown", lock = true, ft = { "markdown" } }) -- some tools for markdown files
+    use({ "jghauser/follow-md-links.nvim", lock = true, ft = { "markdown" } })
 
     -- profiling
     use({ "dstein64/vim-startuptime", lock = true })
