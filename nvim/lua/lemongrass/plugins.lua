@@ -230,6 +230,7 @@ return require("packer").startup(function(use)
         setup = function()
             vim.g.mkdp_filetypes = { "markdown" }
         end,
+        config = [[require('lemongrass.lazyload.markdown-preview')]],
         ft = { "markdown" },
         lock = true,
     })
