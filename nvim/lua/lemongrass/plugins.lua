@@ -141,7 +141,7 @@ return require("packer").startup(function(use)
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
-    use({ "windwp/nvim-autopairs", lock = true })
+    use({ "windwp/nvim-autopairs", lock = true, after = "nvim-treesitter" })
     use({
         "windwp/nvim-ts-autotag",
         lock = true,
