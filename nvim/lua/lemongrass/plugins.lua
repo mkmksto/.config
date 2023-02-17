@@ -153,9 +153,19 @@ return require("packer").startup(function(use)
 
     --scrollbar and other UI elements
     use({ "dstein64/nvim-scrollview", lock = true })
-    use({ "lukas-reineke/indent-blankline.nvim", lock = true })
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        lock = true,
+        event = "BufRead",
+        config = [[require('lemongrass.lazyload.indent-blank')]],
+    })
     -- Lua
-    use({ "folke/zen-mode.nvim", lock = true })
+    use({
+        "folke/zen-mode.nvim",
+        lock = true,
+        event = "BufRead",
+        config = [[require('lemongrass.lazyload.zenmode')]],
+    })
 
     -- Telescope
     use({
