@@ -149,20 +149,6 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "swap lines" })
 keymap.set("x", "<leader>p", '"_dP', { desc = "Do not copy singly deleted characters to register" })
 keymap.set("n", "Q", "<nop>", { desc = "they said S-q is dangerous, dunno why" })
 
--- docstrings
-keymap.set(
-    { "n" },
-    "<leader>dpy",
-    "<cmd>DogeGenerate google<CR>",
-    { desc = "[Doge] Generate Python docs docstrings in google standard", noremap = true, silent = true }
-)
-keymap.set(
-    { "n" },
-    "<leader>djs",
-    "<cmd>DogeGenerate jsdoc<CR>",
-    { desc = "[Doge] Generate JSdoc docstrings", noremap = true, silent = true }
-)
-
 -- toggles markdown checkboxes
 keymap.set(
     "n",

@@ -121,3 +121,17 @@ vim.keymap.set(
     ":lua _LAZYGIT_TOGGLE()<CR>",
     { desc = "[Toggleterm] Toggle floating Lazygit terminal" }
 )
+
+-- docstrings
+keymap.set(
+    { "n" },
+    "<leader>dpy",
+    "<cmd>DogeGenerate google<CR>",
+    { desc = "[Doge] Generate Python docs docstrings in google standard", noremap = true, silent = true }
+)
+keymap.set(
+    { "n" },
+    "<leader>djs",
+    "<cmd>DogeGenerate jsdoc<CR>",
+    { desc = "[Doge] Generate JSdoc docstrings", noremap = true, silent = true }
+)

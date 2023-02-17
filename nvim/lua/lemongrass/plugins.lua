@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
         cmd = { "DogeGenerate", "DogeCreateDocStandard" },
         disable = false,
         event = "VimEnter",
+        config = [[require('lemongrass.lazyload.doge')]],
         lock = true,
     })
 
