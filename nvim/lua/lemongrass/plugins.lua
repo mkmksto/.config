@@ -134,7 +134,10 @@ return require("packer").startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         lock = true,
-        event = "BufWinEnter",
+        -- event = "BufWinEnter",
+        ft = { "python", "javascript", "vue", "markdown", "lua", "json", "css", "html", "typescript" },
+        -- cmd = { "Telescope" },
+        -- keys = { "<C-p>", "<leader>fs", "<C-S-p>" },
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
@@ -143,7 +146,6 @@ return require("packer").startup(function(use)
         "windwp/nvim-ts-autotag",
         lock = true,
         after = "nvim-treesitter",
-        event = "InsertEnter",
     })
 
     -- git (https://www.youtube.com/watch?v=ZgyVY7tArwg)
