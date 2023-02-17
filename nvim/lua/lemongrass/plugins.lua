@@ -45,7 +45,14 @@ return require("packer").startup(function(use)
     use({
         "ThePrimeagen/refactoring.nvim",
         lock = true,
-        opt = true,
+        keys = {
+            "<leader>re",
+            "<leader>rf",
+            "<leader>rv",
+            "<leader>ri",
+            "<leader>rb",
+            "<leader>rbf",
+        },
         config = [[require('lemongrass.lazyload.refactoring')]],
     })
     use({ "windwp/nvim-spectre", lock = true, cmd = "Spectre", config = [[require('lemongrass.lazyload.spectre')]] })
