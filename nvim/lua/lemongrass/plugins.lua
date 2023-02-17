@@ -93,7 +93,7 @@ return require("packer").startup(function(use)
     })
     use({ "hrsh7th/cmp-buffer", lock = true, event = "InsertEnter" })
     use({ "hrsh7th/cmp-path", lock = true, event = "InsertEnter" })
-    use({ "hrsh7th/cmp-cmdline", lock = true })
+    use({ "hrsh7th/cmp-cmdline", lock = true, event = "CmdlineChanged" })
     use({ "lukas-reineke/cmp-under-comparator", lock = true })
     use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true, event = "InsertEnter" })
 
