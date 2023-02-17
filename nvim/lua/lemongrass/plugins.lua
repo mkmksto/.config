@@ -199,10 +199,10 @@ return require("packer").startup(function(use)
     use({ "uga-rosa/ccc.nvim", branch = "0.7.2", lock = true })
 
     -- games
-    use({ "ThePrimeagen/vim-be-good", lock = true })
+    use({ "ThePrimeagen/vim-be-good", lock = true, cmd = "VimBeGood" })
 
     -- notetaking
-    use({ "opdavies/toggle-checkbox.nvim", lock = true })
+    use({ "opdavies/toggle-checkbox.nvim", lock = true, ft = { "markdown" } })
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
