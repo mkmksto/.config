@@ -25,14 +25,14 @@ end
 
 packer.init({
     snapshot_path = vim.fn.expand("~/.config/nvim/packer_snaps/"),
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "rounded" })
+        end,
+    },
 })
 
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-
 return require("packer").startup(function(use)
-    -- main
     use({ "wbthomason/packer.nvim" })
     use({ "nvim-lua/plenary.nvim", lock = true })
 
@@ -57,29 +57,23 @@ return require("packer").startup(function(use)
     })
     use({ "windwp/nvim-spectre", lock = true, cmd = "Spectre", config = [[require('lemongrass.lazyload.spectre')]] })
 
-    -- comments and docstrings
+    -- comments and docstrings and string operation plugins
     use({ "numToStr/Comment.nvim", lock = true, event = "BufRead", config = [[require('lemongrass.lazyload.comment')]] })
     use({
         "kkoomen/vim-doge",
         run = ":call doge#install()",
-        -- config = function()
-        --     require("config.doge").setup()
-        -- end,
         cmd = { "DogeGenerate", "DogeCreateDocStandard" },
         disable = false,
         event = "VimEnter",
         config = [[require('lemongrass.lazyload.doge')]],
         lock = true,
     })
-
-    -- surrounds
     use({ "tpope/vim-surround", lock = true })
 
-    -- file explorer
+    -- file explorer, file operations, buffer operations
     use({ "nvim-tree/nvim-tree.lua", lock = true })
     use({ "kyazdani42/nvim-web-devicons", lock = true })
     use({ "nvim-lualine/lualine.nvim", lock = true })
-    -- c@m https://youtu.be/vJAmjAax2H0?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=453
     use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons", lock = true })
     use({ "moll/vim-bbye", lock = true })
 
@@ -134,10 +128,7 @@ return require("packer").startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         lock = true,
-        -- event = "BufWinEnter",
         ft = { "python", "javascript", "vue", "markdown", "lua", "json", "css", "html", "typescript" },
-        -- cmd = { "Telescope" },
-        -- keys = { "<C-p>", "<leader>fs", "<C-S-p>" },
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
