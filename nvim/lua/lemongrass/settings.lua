@@ -8,6 +8,11 @@ vim.opt.shell = "zsh"
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smartcase = true
 
+-- backups, swaps, etc https://youtu.be/jGAAnrOF2mQ?list=PLTqGJvc0HUn2GY0sW2L61lDuBaXBKnorO
+vim.opt.writebackup = false
+vim.opt.backup = false
+vim.opt.swapfile = false
+
 -- line numbers + relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,6 +28,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.smartindent = true
 -- vim.opt.viewoptions = "folds,cursor"
 vim.opt.title = true
 -- https://github.com/F-Robot/dotfiles/blob/master/.config/nvim/lua/settings.lua
