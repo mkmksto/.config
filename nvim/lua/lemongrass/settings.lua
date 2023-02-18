@@ -1,3 +1,9 @@
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 1000 })
+    end,
+})
+
 -- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/craftzdog/base.lua
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
