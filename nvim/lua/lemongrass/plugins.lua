@@ -178,6 +178,7 @@ return require("packer").startup(function(use)
         "folke/zen-mode.nvim",
         lock = true,
         event = "BufRead",
+        cmd = { "ZenMode" },
         config = [[require('lemongrass.lazyload.zenmode')]],
     })
 
