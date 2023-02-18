@@ -56,7 +56,8 @@ local diff = {
 
 lualine.setup({
     options = {
-        theme = bubbles_theme,
+        theme = "catppuccin",
+        -- theme = bubbles_theme,
         component_separators = "|",
         section_separators = { left = "", right = "" },
     },

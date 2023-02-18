@@ -15,10 +15,14 @@ colorscheme.setup({
     styles = {
         comments = { "italic" },
     },
+    integrations = {
+        telescope = true,
+    },
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin-macchiato")
+-- vim.cmd.colorscheme("ayu-mirage")
 
 -------------------------------------------
 --

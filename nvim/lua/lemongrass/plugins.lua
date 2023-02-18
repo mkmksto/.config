@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
     use({ "nyoom-engineering/oxocarbon.nvim", lock = true, opt = true })
     use({ "olimorris/onedarkpro.nvim", lock = true, opt = true })
     use({ "catppuccin/nvim", as = "catppuccin", lock = true })
+    use({ "Shatur/neovim-ayu", lock = true })
 
     -- refactoring
     use({
