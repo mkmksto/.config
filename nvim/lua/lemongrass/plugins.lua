@@ -88,7 +88,7 @@ return require("packer").startup(function(use)
     })
     use({ "hrsh7th/cmp-buffer", lock = true })
     use({ "hrsh7th/cmp-path", lock = true })
-    use({ "hrsh7th/cmp-cmdline", lock = true, event = "CmdlineChanged" })
+    use({ "hrsh7th/cmp-cmdline", lock = true })
     use({ "lukas-reineke/cmp-under-comparator", lock = true })
     use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
 
@@ -129,14 +129,12 @@ return require("packer").startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         lock = true,
-        ft = { "python", "javascript", "vue", "markdown", "lua", "json", "css", "html", "typescript" },
         config = [[require('lemongrass.lazyload.treesitter')]],
     })
     -- autoclosing
     use({
         "windwp/nvim-autopairs",
         lock = true,
-        event = "BufRead",
         config = [[require('lemongrass.lazyload.autopairs')]],
     })
     use({

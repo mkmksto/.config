@@ -1,8 +1,16 @@
+local yanks = vim.api.nvim_create_augroup("yanks", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
+    group = yanks,
     callback = function()
         vim.highlight.on_yank({ higroup = "Visual", timeout = 1000 })
     end,
 })
+
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     callback = function()
+--         vim.cmd("hi clear IncSearch")
+--     end,
+-- })
 
 -- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/craftzdog/base.lua
 vim.scriptencoding = "utf-8"
