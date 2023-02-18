@@ -19,6 +19,7 @@ treesitter.setup({
         "vue",
         "bash",
         "vim",
+        "css",
     },
     -- https://www.lazyvim.org/plugins/treesitter
     incremental_selection = {

@@ -1,16 +1,42 @@
 local yanks = vim.api.nvim_create_augroup("yanks", { clear = true })
+local yank_ns = vim.api.nvim_create_namespace("hlyank")
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = yanks,
-    callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 1000 })
+    pattern = { "*" },
+    callback = function(args)
+        local pos1 = vim.fn.getpos("'[")
+        local pos2 = vim.fn.getpos("']")
+        local event = vim.v.event
+
+        pos1 = { pos1[2] - 1, pos1[3] - 1 + pos1[4] }
+        pos2 = { pos2[2] - 1, pos2[3] - 1 + pos2[4] }
+
+        vim.highlight.range(
+            args.buf,
+            yank_ns,
+            "Visual",
+            pos1,
+            pos2,
+            { priority = 200, inclusive = event.inclusive, regtype = event.regtype }
+        )
     end,
 })
 
--- vim.api.nvim_create_autocmd("CursorHold", {
---     callback = function()
---         vim.cmd("hi clear IncSearch")
---     end,
--- })
+local clear_hl = function(event)
+    vim.api.nvim_create_autocmd(event, {
+        pattern = { "*" },
+        group = yanks,
+        callback = function(args)
+            vim.api.nvim_buf_clear_namespace(args.buf, yank_ns, 0, -1)
+        end,
+    })
+end
+
+clear_hl("TextChanged")
+-- clear_hl("InsertEnter")
+
+vim.keymap.set("n", "<Esc>", function()
+    vim.api.nvim_buf_clear_namespace(0, yank_ns, 0, -1)
+end, { noremap = true })
 
 -- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/craftzdog/base.lua
 vim.scriptencoding = "utf-8"
