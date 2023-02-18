@@ -33,6 +33,7 @@ packer.init({
 })
 
 return require("packer").startup(function(use)
+    use({ "lewis6991/impatient.nvim", config = [[require('impatient')]], lock = true })
     use({ "wbthomason/packer.nvim" })
     use({ "nvim-lua/plenary.nvim", lock = true })
 
