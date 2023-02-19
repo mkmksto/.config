@@ -15,7 +15,7 @@ keymap.set("n", "<C-Enter>", "o<Esc>", { desc = "Create empty newline" })
 keymap.set({ "i", "n", "v" }, "<C-z>", "")
 keymap.set("n", " ", "")
 
-keymap.set({ "n", "v" }, "<S-j>", "")
+-- keymap.set({ "n", "v" }, "<S-j>", "")
 keymap.set("n", "<Up>", "")
 keymap.set("n", "<Down>", "")
 keymap.set("n", "<Left>", "")
