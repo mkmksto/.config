@@ -54,6 +54,17 @@ local diff = {
     separator = { left = "", right = "" },
 }
 
+local branch = {
+    "branch",
+    color = { bg = colors.violet, fg = colors.black },
+    separator = { right = "" },
+}
+
+local filename = {
+    "filename",
+    separator = { right = "" },
+}
+
 lualine.setup({
     options = {
         theme = "catppuccin",
@@ -65,8 +76,8 @@ lualine.setup({
         lualine_a = {
             { "mode", separator = { left = "", right = "" }, right_padding = 2 },
         },
-        lualine_b = { "filename", "branch", diff },
-        lualine_c = { "fileformat" },
+        lualine_b = { filename, branch, diff },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = { "filetype", "progress", fileformat, encoding },
         lualine_z = {
