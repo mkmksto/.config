@@ -15,4 +15,7 @@ saga.setup({
     definition_action_keys = {
         edit = "<CR>",
     },
+    ui = {
+        border = "rounded",
+    },
 })

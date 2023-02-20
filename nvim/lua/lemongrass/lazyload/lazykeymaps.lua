@@ -18,7 +18,7 @@ map("n", "<F3>", "<cmd>DapToggleBreakpoint<CR>", { desc = "[DAP] toggle breakpoi
 
 keymap.set(
     "n",
-    "leaderss",
+    "<leader>ss",
     "<cmd>PasteImg<CR>",
     { desc = "[Clipboard Image] Paste image from clipboard into markdown file", noremap = true, silent = true }
 )
