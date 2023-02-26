@@ -27,8 +27,8 @@ keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>bd", "<cmd>Bdelete!<CR>", { desc = "[B]uffer - [D]elete from list" })
 -- keymap.set("n", "<leader>bd", "<cmd>bdelete!<CR>")
 
-keymap.set("n", "<C-s>", "<cmd>write<CR>", { desc = "Write to file/save file", noremap = true, silent = true })
-keymap.set("i", "<C-s>", "", { noremap = true, silent = true })
+keymap.set({ "n", "i" }, "<C-s>", "<cmd>write<CR>", { desc = "Write to file/save file", noremap = true, silent = true })
+-- keymap.set("i", "<C-s>", "", { noremap = true, silent = true })
 
 -- keep cursor in the middle when jumping through search results
 keymap.set("n", "n", "nzzzv")
