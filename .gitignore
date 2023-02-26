@@ -45,7 +45,6 @@ procps
 pulse
 qBittorrent
 QtProject.conf
-./QtProject.conf
 spotify
 totem
 update-notifier
