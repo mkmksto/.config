@@ -26,6 +26,7 @@ htop
 i3
 ibus
 lazygit/state.yml
+libreoffice
 menus
 mimeapps.list
 mono.addins
@@ -43,6 +44,8 @@ Postman
 procps
 pulse
 qBittorrent
+QtProject.conf
+./QtProject.conf
 spotify
 totem
 update-notifier
