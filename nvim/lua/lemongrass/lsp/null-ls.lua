@@ -11,6 +11,14 @@ local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+local function num_to_bool(num)
+    if num == 0 then
+        return false
+    elseif num == 1 then
+        return true
+    end
+end
+
 -- https://youtu.be/b7OguLuaYvE?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=632
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -24,13 +32,21 @@ null_ls.setup({
         formatting.black,
         formatting.isort,
         diagnostics.pylint,
-        diagnostics.eslint_d,
-        -- diagnostics.eslint_d.with({ -- js/ts linter
-        --     -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
-        --     condition = function(utils)
-        --         return utils.root_has_file(".eslintrc.cjs") -- change file extension if you use something else
-        --     end,
-        -- }),
+        -- diagnostics.eslint_d,
+        diagnostics.eslint_d.with({ -- js/ts linter
+            -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
+            condition = function(utils)
+                local has_eslint_file = utils.root_has_file(".eslintrc.cjs")
+                    or utils.root_has_file(".eslintrc")
+                    or utils.root_has_file(".eslintrc.json")
+                    or num_to_bool(vim.fn.filereadable(vim.fn.getcwd() .. "/backend/.eslintrc.cjs"))
+                    or num_to_bool(vim.fn.filereadable(vim.fn.getcwd() .. "/backend/.eslintrc"))
+                    or num_to_bool(vim.fn.filereadable(vim.fn.getcwd() .. "/frontend/.eslintrc.cjs"))
+                    or num_to_bool(vim.fn.filereadable(vim.fn.getcwd() .. "/frontend/.eslintrc"))
+                -- print(not not has_eslint_file)
+                return not not has_eslint_file -- change file extension if you use something else
+            end,
+        }),
     },
     -- configure format on save
     on_attach = function(current_client, bufnr)
