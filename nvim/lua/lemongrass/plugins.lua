@@ -71,6 +71,8 @@ return require("packer").startup(function(use)
         lock = true,
     })
     use({ "tpope/vim-surround", lock = true })
+    -- react / jsx
+    use({ "JoosepAlviste/nvim-ts-context-commentstring", lock = true })
 
     -- file explorer, file operations, buffer operations, tabs
     use({ "nvim-tree/nvim-tree.lua", lock = true })
