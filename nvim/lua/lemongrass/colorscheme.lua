@@ -3,25 +3,27 @@ if not status then
     return
 end
 
-colorscheme.setup({
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    dim_inactive = {
-        enabled = true,
-        shade = "dark",
-        percentage = 0.25,
-    },
-    no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
-    styles = {
-        comments = { "italic" },
-    },
-    integrations = {
-        telescope = true,
-    },
-})
+-- colorscheme.setup({
+--     flavour = "macchiato", -- latte, frappe, macchiato, mocha
+--     dim_inactive = {
+--         enabled = true,
+--         shade = "dark",
+--         percentage = 0.25,
+--     },
+--     no_italic = false, -- Force no italic
+--     no_bold = false, -- Force no bold
+--     styles = {
+--         comments = { "italic" },
+--     },
+--     integrations = {
+--         telescope = true,
+--     },
+-- })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin-macchiato")
+-- vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("ayu-mirage")
+-- vim.cmd("colorscheme onedark")
 -- vim.cmd.colorscheme("ayu-mirage")
 
 -------------------------------------------
