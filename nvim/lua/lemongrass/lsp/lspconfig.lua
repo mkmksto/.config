@@ -123,13 +123,21 @@ lspconfig["jsonls"].setup({
     on_attach = on_attach,
 })
 
--- -- configure tailwindcss server
--- -- https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
--- lspconfig.tailwindcss.setup({
---     capabilities = capabilities,
---     on_attach = on_attach,
---     filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
--- })
+-- configure tailwindcss server
+-- https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
+lspconfig.tailwindcss.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+    -- https://github.com/tailwindlabs/tailwindcss-intellisense/issues/188#issuecomment-906917241
+    root_dir = lspconfig.util.root_pattern("tailwind.config.cjs", "tailwind.config.js", "tailwind.config.ts"),
+    settings = {
+        tailwindCSS = {
+            validate = true,
+        },
+    },
+    flags = { debounce_text_changes = 150 },
+})
 
 -- lspconfig.tsserver.setup({
 --     capabilities = capabilities,
@@ -152,6 +160,7 @@ typescript.setup({
             "javascriptreact",
             "typescript",
             "javascript",
+            "svelte",
         },
     },
 })
