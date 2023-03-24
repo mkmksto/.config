@@ -126,6 +126,7 @@ return require("packer").startup(function(use)
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", lock = true })
+    use({ "hrsh7th/vim-vsnip" })
     use({ "saadparwaiz1/cmp_luasnip", lock = true })
     use({ "rafamadriz/friendly-snippets", lock = true })
 
@@ -238,6 +239,7 @@ return require("packer").startup(function(use)
         lock = true,
         after = "telescope.nvim",
         config = [[require('lemongrass.lazyload.neoclip')]],
+        disable = true,
     })
 
     -- project and session management
