@@ -58,6 +58,24 @@ end
 --     Variable = 3,
 -- }
 
+local function formatForTailwindCSS(entry, vim_item)
+    if vim_item.kind == "Color" and entry.completion_item.documentation then
+        local _, _, r, g, b = string.find(entry.completion_item.documentation, "^rgb%((%d+), (%d+), (%d+)")
+        if r then
+            local color = string.format("%02x", r) .. string.format("%02x", g) .. string.format("%02x", b)
+            local group = "Tw_" .. color
+            if vim.fn.hlID(group) < 1 then
+                vim.api.nvim_set_hl(0, group, { fg = "#" .. color })
+            end
+            vim_item.kind = "●"
+            vim_item.kind_hl_group = group
+            return vim_item
+        end
+    end
+    vim_item.kind = lspkind.symbolic(vim_item.kind) and lspkind.symbolic(vim_item.kind) or vim_item.kind
+    return vim_item
+end
+
 -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 cmp.setup({
     -- https://github.com/hrsh7th/nvim-cmp/issues/209
@@ -92,9 +110,9 @@ cmp.setup({
     }),
     -- sources for autocompletion
     sources = cmp.config.sources({
-        { name = "nvim_lsp", max_item_count = 11, priority = 10 }, -- lsp as source for autocompletion
+        { name = "nvim_lsp", max_item_count = 11, priority = 10, keyword_length = 3 }, -- lsp as source for autocompletion
         { name = "nvim_lsp_signature_help", priority = 9 }, -- displays args for current function
-        { name = "path", max_item_count = 5, priority = 7 }, -- file system paths
+        { name = "path", max_item_count = 5, priority = 7, keyword_length = 2 }, -- file system paths
         -- { name = "luasnip", max_item_count = 4, priority = 5, keyword_length = 3 }, -- snippets
         { name = "buffer", max_item_count = 5, priority = 4, keyword_length = 4 }, -- text within current buffer
         -- { name = "dictionary", max_item_count = 8, priority = 4, keyword_length = 2 }, -- english dictionary
@@ -138,6 +156,10 @@ cmp.setup({
                 luasnip = "[LuaSnip]",
                 path = "[Path]",
             },
+            before = function(entry, vim_item)
+                vim_item = formatForTailwindCSS(entry, vim_item)
+                return vim_item
+            end,
         }),
     },
     window = {
