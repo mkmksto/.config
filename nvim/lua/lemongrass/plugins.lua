@@ -107,6 +107,7 @@ return require("packer").startup(function(use)
               set sessionoptions+=tabpages,globals " store tabpages and globals in session
             ]])
         end,
+        lock = true,
     })
     use({ "moll/vim-bbye", lock = true })
 
