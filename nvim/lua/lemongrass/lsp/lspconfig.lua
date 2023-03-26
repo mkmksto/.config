@@ -202,12 +202,12 @@ typescript.setup({
 --     on_attach = on_attach,
 -- })
 
--- -- configure emmet language server
--- lspconfig["emmet_ls"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach,
---     filetypes = { "html", "typescriptreact", "javascriptreact", "vue" },
--- })
+-- configure emmet language server
+lspconfig["emmet_ls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "html", "typescriptreact", "javascriptreact", "vue" },
+})
 
 -- configure lua server (with special settings)
 lspconfig.lua_ls.setup({
