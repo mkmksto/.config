@@ -58,7 +58,68 @@ check that you have unzip installed (particularly for WSL)
 
 includes:
 
+- install zsh first
+- [main](https://www.youtube.com/watch?v=su0h5StEZ6A) installation video
+- `chsh -s $(which zsh)` to change the default shell
 - remaps for windows `terminal` to enable common keymaps. (like `s-space` and `c-s-p`)
+
+#### Remaps (Windows Neovim (WSL))
+
+##### To enable shift+space as your escape key for the windows terminal
+
+```json
+    "actions":
+    [
+        {
+            ...
+        },
+	{
+            "command": {
+	        "action" : "sendInput",
+	    	"input": "\u001b"
+	    },
+            "keys": "shift+space"
+        }
+    ],
+```
+
+##### To enable ctrl+shift+p to open telescope key maps
+
+1. remap windows terminal's command palette to `ctrl+alt+p`
+2. remove this line inside the JSON file
+
+```json
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+p"
+        },
+```
+
+3. add this line
+
+```json
+{
+  "command": {
+    "action": "sendInput",
+    "input": "\u001b[80;5u"
+  },
+  "keys": "ctrl+shift+p"
+}
+```
+
+> Note: you can't write `\x1b`, apparently it's not valid JSON, you have to use `/u001b` [source](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/actions)
+
+##### Other things you'll need to config/install manually
+
+`lspconfig.lua` (around line 157)
+
+- instead of hardcoding the username, check if lua/vim has functions for this
+- or rather, just try using the relative path to home `~/`, if this doesn't work, try `vim.fn.expand`
+- install a global TS lsp here
+
+- search how to sync clipboard with windows if using WSL
+- comment using c-/ not working
+- markdown preview (not opening browser if using WSL- prob because the browser is hardcoded to a linux path)
 
 ## Snapshots
 
