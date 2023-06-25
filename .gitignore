@@ -51,6 +51,7 @@ qBittorrent
 QtProject.conf
 simple-update-notifier
 spotify
+stripe
 totem
 update-notifier
 user-dirs.dirs
