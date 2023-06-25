@@ -6,7 +6,9 @@ nvim/**/packer_compiled.lua
 autostart
 bleachbit
 BraveSoftware
+coc
 Code
+create-next-app-nodejs
 dconf
 enchant
 eog
@@ -28,6 +30,7 @@ ibus
 lazygit/state.yml
 libreoffice
 menus
+microsoft-edge-beta
 mimeapps.list
 mono.addins
 monitors.xml
@@ -37,6 +40,7 @@ ibus-mozc-gnome-initial-setup-done
 mpv
 nautilus
 neofetch
+nextjs-nodejs
 org.gnome.Epiphany.WebApp-notion-486af5da11b1d7b984dd0eec94e15310e479449f
 pavucontrol.ini
 Pinta
@@ -52,3 +56,4 @@ update-notifier
 user-dirs.dirs
 user-dirs.locale
 yelp
+.wrangler
