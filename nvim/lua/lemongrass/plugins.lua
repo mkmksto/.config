@@ -39,7 +39,7 @@ return require("packer").startup(function(use)
 
     -- color schemes
     use({ "nyoom-engineering/oxocarbon.nvim", lock = true, opt = true })
-    use({ "olimorris/onedarkpro.nvim", lock = true, opt = true })
+    use({ "olimorris/onedarkpro.nvim", lock = true })
     use({ "catppuccin/nvim", as = "catppuccin", lock = true })
     use({ "Shatur/neovim-ayu", lock = true })
 
@@ -119,17 +119,17 @@ return require("packer").startup(function(use)
             require("lemongrass.lazyload.nvimcmp")
         end,
     })
-    use({ "hrsh7th/cmp-buffer", lock = true })
-    use({ "hrsh7th/cmp-path", lock = true })
+    use({ "hrsh7th/cmp-buffer", lock = true, disable = true })
+    use({ "hrsh7th/cmp-path", lock = true, disable = true })
     use({ "hrsh7th/cmp-cmdline", lock = true })
-    use({ "lukas-reineke/cmp-under-comparator", lock = true })
-    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true })
+    use({ "lukas-reineke/cmp-under-comparator", lock = true, disable = true })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", lock = true, disable = true })
 
     -- snippets
-    use({ "L3MON4D3/LuaSnip", lock = true })
-    use({ "hrsh7th/vim-vsnip" })
-    use({ "saadparwaiz1/cmp_luasnip", lock = true })
-    use({ "rafamadriz/friendly-snippets", lock = true })
+    use({ "L3MON4D3/LuaSnip", lock = true, disable = false })
+    use({ "hrsh7th/vim-vsnip", disable = true })
+    use({ "saadparwaiz1/cmp_luasnip", lock = true, disable = true })
+    use({ "rafamadriz/friendly-snippets", lock = true, disable = true })
 
     -- managing and installing LSP servers (that mason will install)
     use({ "williamboman/mason.nvim", lock = true })
@@ -146,6 +146,7 @@ return require("packer").startup(function(use)
     use({ "jose-elias-alvarez/null-ls.nvim", lock = true })
     use({ "jay-babu/mason-null-ls.nvim", lock = true }) -- similar to mason-lspconfig but for formatters
 
+    use({ "neoclide/coc.nvim", branch = "release", lock = true })
     -- DAP
     use({
         "mfussenegger/nvim-dap",
@@ -240,7 +241,7 @@ return require("packer").startup(function(use)
         lock = true,
         after = "telescope.nvim",
         config = [[require('lemongrass.lazyload.neoclip')]],
-        disable = true,
+        -- disable = true,
     })
 
     -- project and session management
