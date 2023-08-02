@@ -308,7 +308,7 @@ return require("packer").startup(function(use)
         })
     end
 
-    use({ "ixru/nvim-markdown", lock = true, ft = { "markdown" } }) -- some tools for markdown files
+    use({ "ixru/nvim-markdown", lock = true, ft = { "markdown" }, disable = true }) -- some tools for markdown files
     use({ "jghauser/follow-md-links.nvim", lock = true, ft = { "markdown" } })
 
     -- profiling

@@ -3,17 +3,17 @@
 --     return
 -- end
 
-local status, colorscheme = pcall(require, "onedarkpro")
-if not status then
-    return
-end
-colorscheme.setup({
-    colors = {
-        dark = {
-            bg = "#464646", -- yellow
-        },
-    },
-})
+-- local status, colorscheme = pcall(require, "onedarkpro")
+-- if not status then
+--     return
+-- end
+-- colorscheme.setup({
+--     colors = {
+--         dark = {
+--             bg = "#464646", -- yellow
+--         },
+--     },
+-- })
 
 -- colorscheme.setup({
 --     overrides = { NormalNC = { bg = "##C0C0C0", fg = "#808080" } },
@@ -39,8 +39,8 @@ colorscheme.setup({
 -- setup must be called before loading
 -- vim.cmd.colorscheme("catppuccin-macchiato")
 -- vim.cmd.colorscheme("ayumirage")
-vim.cmd("colorscheme onedark_dark")
--- vim.cmd.colorscheme("ayu-mirage")
+-- vim.cmd("colorscheme onedark_dark")
+vim.cmd.colorscheme("ayu-mirage")
 
 -------------------------------------------
 --
