@@ -53,7 +53,8 @@ keymap.set("n", "<leader><S-Tab>", "<cmd>tabp<CR>", { desc = "Previous tab", nor
 keymap.set(
     "n",
     "<C-b>",
-    "<cmd>NvimTreeToggle<CR>",
+    -- "<cmd>NvimTreeToggle<CR>",
+    "<cmd>Neotree toggle<CR>",
     { desc = "Toggle File Explorer(NvimTree)", noremap = true, silent = true }
 )
 
