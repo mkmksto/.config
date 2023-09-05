@@ -7,9 +7,12 @@ autostart
 bleachbit
 BraveSoftware
 coc
+com.sourcegraph.cody
 Code
 create-next-app-nodejs
 dconf
+"Docker Desktop"
+Docker*Desktop
 enchant
 eog
 epiphany
@@ -36,6 +39,7 @@ mono.addins
 monitors.xml
 monitors.xml~
 mozc
+ngrok
 ibus-mozc-gnome-initial-setup-done
 mpv
 nautilus
