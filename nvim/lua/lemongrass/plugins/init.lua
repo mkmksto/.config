@@ -6,4 +6,5 @@ return {
     "moll/vim-bbye",
     "windwp/nvim-ts-autotag",
     "dstein64/nvim-scrollview",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
 }
