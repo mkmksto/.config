@@ -3,7 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        { "antosha417/nvim-lsp-file-operations", config = true },
+        -- { "antosha417/nvim-lsp-file-operations", config = true }, -- rename files through neotree and update affected imports
         "jose-elias-alvarez/typescript.nvim",
     },
     config = function()
@@ -11,7 +11,7 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local typescript = require("typescript")
 
-        local keymap = vim.keymap -- for conciseness
+        local keymap = vim.keymap
 
         local on_attach = function(client, bufnr)
             -- keybind options
@@ -130,12 +130,6 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure svelte server
-        lspconfig["svelte"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         -- configure prisma orm server
         lspconfig["prismals"].setup({
             capabilities = capabilities,
@@ -160,6 +154,35 @@ return {
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+        })
+
+        lspconfig["bashls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["dockerls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["jsonls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["yamlls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["sqlls"].setup({
+            cmd = { "sql-language-server", "up", "--method", "stdio" },
+            capabilities = capabilities,
+            on_attach = on_attach,
+            root_dir = function()
+                return vim.loop.cwd()
+            end,
         })
 
         -- configure lua server (with special settings)

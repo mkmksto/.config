@@ -31,6 +31,12 @@ return {
                 "emmet_ls",
                 "prismals",
                 "pyright",
+                "bashls",
+                "dockerls",
+                "jsonls",
+                "yamlls",
+                -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sqlls
+                "sqlls",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
