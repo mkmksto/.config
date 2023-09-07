@@ -1,7 +1,8 @@
 return {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "catppuccin/nvim" },
     config = function()
-        local lualine = require('lualine')
+        local lualine = require("lualine")
         -- stylua: ignore
         local colors = {
           blue   = '#80a0ff',
@@ -90,5 +91,5 @@ return {
             tabline = {},
             extensions = {},
         })
-    end
+    end,
 }
