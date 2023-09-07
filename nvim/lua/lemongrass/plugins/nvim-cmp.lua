@@ -59,7 +59,7 @@ return {
         cmp.setup({
             -- https://github.com/hrsh7th/nvim-cmp/issues/209
             completion = {
-                completeopt = "menu,menuone,noinsert",
+                completeopt = "menu,menuone,preview,noinsert",
             },
             -- https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
             enabled = function()
