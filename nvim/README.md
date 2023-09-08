@@ -9,7 +9,7 @@
 
 ## Requirements
 
-- nvim >= `0.8.0`, some commands don't work for lower versions (latest: working with `0.8.3`)
+- nvim >= `0.9.1` (used `0.8.3` previously)
 - git
 - Installing `black`, `isort` and `pylint` can sometimes result in `unable to create python3 venv environment`. Check this [stackoverflow](https://askubuntu.com/questions/958303/unable-to-create-virtual-environment-with-python-3-6) post
 
