@@ -1,3 +1,6 @@
+local has = vim.fn.has
+local is_win = has("win32")
+
 return {
     {
         "akinsho/toggleterm.nvim",
@@ -14,7 +17,7 @@ return {
                 direction = "horizontal",
                 close_on_exit = true,
                 start_in_insert = true,
-                shell = vim.o.shell,
+                shell = is_win and '"C:\\Program Files\\Git\\bin\\bash.exe"' or vim.o.shell,
                 auto_scroll = true,
             })
 

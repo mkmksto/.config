@@ -1,3 +1,6 @@
+local has = vim.fn.has
+local is_win = has("win32")
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank({ higroup = "Visual", timeout = 400 })
@@ -51,7 +54,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
-vim.opt.shell = "zsh"
+vim.opt.shell = is_win and "cmd.exe" or "zsh"
 
 -- ignore case if lowercase, but will not if something is uppercased
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
