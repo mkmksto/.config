@@ -12,9 +12,12 @@ return {
         end)()
 
         local comment = require("Comment")
-        if is_wsl then
+        if is_wsl or is_win then
             comment.setup({
                 pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+                toggler = {
+                    line = "//",
+                },
                 opleader = {
                     block = "gb",
                 },
