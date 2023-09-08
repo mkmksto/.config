@@ -1,3 +1,6 @@
+local has = vim.fn.has
+local is_win = has("win32")
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -31,8 +34,8 @@ return {
                 incremental_selection = {
                     enable = true,
                     keymaps = {
-                        init_selection = "<C-space>",
-                        node_incremental = "<C-space>",
+                        init_selection = is_win and "@" or "<C-space>",
+                        node_incremental = is_win and "@" or "<C-space>",
                         scope_incremental = "<nop>",
                         node_decremental = "<bs>",
                     },
