@@ -1,11 +1,25 @@
+local has = vim.fn.has
+local is_win = has("win32")
+
+local deps
+if is_win then
+    deps = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+    }
+else
+    deps = {
+        "nvim-lua/plenary.nvim",
+        -- fzf native is causing windows problems for some reason
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        "nvim-tree/nvim-web-devicons",
+    }
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        "nvim-tree/nvim-web-devicons",
-    },
+    dependencies = deps,
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")
@@ -202,7 +216,12 @@ return {
             },
         })
 
-        telescope.load_extension("fzf")
+        if is_win then
+            print("is windows")
+        else
+            print("is not windows")
+            telescope.load_extension("fzf")
+        end
         -- telescope.load_extension("neoclip")
         -- telescope.load_extension("repo")
     end,

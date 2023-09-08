@@ -132,3 +132,10 @@ includes:
 ### Important snapshots
 
 - `02-25-2023-23-58` `(11:58PM):` unlocked all packages then resynced packer, changed from `sumneko_lua` to `lua_ls`, added more `pcalls`, added more support for `WSL`, packer bootstrap.
+
+## Windows Setup
+
+- config is located at `$Appdata/Local/nvim` (create a folder is none yet)
+- `mklink /D link "D:\path\to\neovim\config"` (create symlink from your neovim config (in this case, located @ drive D, to where the neovim config should be located(at the appdata folder) ))
+- install fzf, rg, fd
+- install `zig` using chocolatey (https://stackoverflow.com/questions/75587679/neovim-treesitter-returning-no-c-complier-error), without `gcc` or `zig`, treesitter fails to install things.
