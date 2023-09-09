@@ -1,5 +1,4 @@
-local has = vim.fn.has
-local is_win = has("win32")
+local is_win = vim.loop.os_uname().sysname == "Windows"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()

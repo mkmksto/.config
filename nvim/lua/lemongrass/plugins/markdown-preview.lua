@@ -5,8 +5,7 @@ return {
         vim.fn["mkdp#util#install"]()
     end,
     config = function()
-        local has = vim.fn.has
-        local is_linux = has("unix")
+        local is_linux = vim.loop.os_uname().sysname == "Linux"
         -- https://www.reddit.com/r/neovim/comments/vr68yl/checking_for_wsl_in_initlua/
         local is_wsl = (function()
             local output = vim.fn.systemlist("uname -r")

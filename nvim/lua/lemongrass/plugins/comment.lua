@@ -1,9 +1,8 @@
 return {
     "numToStr/Comment.nvim",
     config = function()
-        local has = vim.fn.has
-        local is_linux = has("unix")
-        local is_win = has("win32")
+        local is_linux = vim.loop.os_uname().sysname == "Linux"
+        local is_win = vim.loop.os_uname().sysname == "Windows"
 
         -- https://www.reddit.com/r/neovim/comments/vr68yl/checking_for_wsl_in_initlua/
         local is_wsl = (function()
