@@ -1,4 +1,5 @@
-local is_win = vim.loop.os_uname().sysname == "Windows"
+local current_os = vim.loop.os_uname().sysname
+local is_win = string.find(current_os, "Windows")
 
 return {
     {

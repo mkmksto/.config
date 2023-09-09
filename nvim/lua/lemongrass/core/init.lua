@@ -1,8 +1,10 @@
 require("lemongrass.core.keymaps")
 require("lemongrass.core.options")
 
-local is_linux = vim.loop.os_uname().sysname == "Linux"
-local is_win = vim.loop.os_uname().sysname == "Windows"
+local current_os = vim.loop.os_uname().sysname
+local is_win = string.find(current_os, "Windows")
+
+local is_linux = string.find(current_os, "Linux")
 -- https://www.reddit.com/r/neovim/comments/vr68yl/checking_for_wsl_in_initlua/
 local is_wsl = (function()
     local output = vim.fn.systemlist("uname -r")

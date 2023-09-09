@@ -1,4 +1,6 @@
-local is_win = vim.loop.os_uname().sysname == "Windows"
+local current_os = vim.loop.os_uname().sysname
+-- On my PC, vim.loop.os_uname().sysname evalues to Windows_NT instead of just Windows
+local is_win = string.find(current_os, "Windows")
 
 local deps
 if is_win then
