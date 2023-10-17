@@ -1,0 +1,1 @@
+- check which of your repos has a guide to installing python on windows.
