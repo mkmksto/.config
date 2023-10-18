@@ -17,6 +17,7 @@
 - nvim (0.9.1).
 - ngrok
 - cody
+- tldr
 
 # Commands
 
