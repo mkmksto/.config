@@ -27,3 +27,7 @@
 
 - see your `.zshrc`, i.e:
 - `export PATH="/home/lemongrass/Downloads/custom_installs:$PATH"`
+
+# Other
+
+- check your G Photos
