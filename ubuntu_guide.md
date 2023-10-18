@@ -15,8 +15,15 @@
 - lazygit
 - docker
 - nvim (0.9.1).
+- ngrok
+- cody
 
 # Commands
 
 - `apt list --installed`
 - `sh -c "flameshot gui --path ~/Pictures/flameshot_temp/ --clipboard && rm -f ~/Pictures/flameshot_temp/*"`
+
+# Installing neovim
+
+- see your `.zshrc`, i.e:
+- `export PATH="/home/lemongrass/Downloads/custom_installs:$PATH"`
