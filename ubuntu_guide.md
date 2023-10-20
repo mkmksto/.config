@@ -9,6 +9,8 @@
 - zsh
 - oh my zsh
 - python (check how to properly install python envs that don't interfere with ubuntu).
+- [pyenv](https://www.youtube.com/watch?v=3my06DUnApM)
+- nvm
 - node
 - pnpm
 - git
